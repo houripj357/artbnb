@@ -1,0 +1,14 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "static_pages";
+
+.purple-button {
+	background-color: #e692f8;
+	border-color: #e692f8;
+} 
+
+.white-header-text {
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
