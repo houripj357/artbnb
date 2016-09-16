@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row" align="center">
-    <div class="bg-homepage-info col-lg-12 ">
+    <div class="bg-registration col-lg-12 ">
       <h2>Sign Up For Artbnb!</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -16,9 +16,16 @@
           <%= f.email_field :email %>
         </div>
 
+        <h5>Select one:</h5>
+
         <div class="field">
           <%= check_box_tag(:artist) %>
           <%= label_tag(:artist, "I am an Artist") %>
+        </div>
+
+        <div class="field">
+          <%= check_box_tag(:artist) %>
+          <%= label_tag(:artist, "I am a Patron") %>
         </div>
 
         <div class="field">
@@ -40,10 +47,12 @@
       <% end %>
     </div>
 
-    <div class="bg-venues-banner col-lg-12">
+    <div class="bg-venues-banner padding col-lg-12">
       <h2>Already A Member?</h2>
       <%= render "devise/shared/links" %>
     </div>
 
   </div>
 </div>
+<div>
+  </div>

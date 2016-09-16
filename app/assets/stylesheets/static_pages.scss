@@ -6,13 +6,14 @@
 	background-image: url(image-path('homepage-hero-banner-artbnb-paint.jpg'));
 	padding: 20px;
 	margin-top: 20px;
+	height: 500px;
 }
 
 .bg-homepage-info {
-	background-image: url(image-path('art-gallery-artbnb-artist.jpg'));
+	background-image: url(image-path('bg-homepage-register'));
 	padding: 20px;
 	margin-top: 20px;
-	height: 400px;
+	height: 300px;
 }
 
 .bg-venues-banner {
@@ -20,3 +21,38 @@
 	padding: 20px;
 	margin-top: 20px;
 }
+
+.page-footer .footer-copyright {
+    font-weight: 300;
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(230,146,248,0.8);
+    background-color: rgba(51,51,51,0.08);
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.purple.lighten-1 {
+    background-color: #eaabf8 !important;
+}
+
+.white-text {
+    color: #FFFFFF !important;
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 0.82rem 0 0.656rem 0;
+}
+
+.grey-text {
+    color: #9e9e9e !important;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+ }

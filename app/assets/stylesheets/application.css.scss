@@ -8,7 +8,31 @@
 	border-color: #e692f8;
 } 
 
+.green-button {
+	background-color: #aedd94;
+	border-color: #aedd94;
+}
+
 .white-header-text {
 	color: white;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.bg-registration {
+	background-image: url(image-path('art-gallery-artbnb-artist'));
+	padding: 20px;
+	margin-top: 20px;
+	height: 450px;
+}
+
+.bg-sign-in {
+	background-image: url(image-path('art-gallery-artbnb-artist'));
+	padding: 20px;
+	margin-top: 20px;
+	height: 300px;
+}
+
+.padding {
+	padding: 20px;
+	margin-bottom: 20px;
 }

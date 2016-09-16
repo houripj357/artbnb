@@ -5,8 +5,6 @@
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
       </button>
       <div class="navbar-brand"><%= link_to "Artbnb", root_path %></div>
     </div>
@@ -14,21 +12,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-		<li>
-				<% if user_signed_in? %> 
-					<% %>
-				<% else %>
-					<%= link_to "Register for Artbnb", new_user_registration_path %>
-				<% end %>
-			</li>
-        <li><%= link_to "Browse Art Gallery (for now, see artists)", artists_path %></li>
-        <li class="active"><%= link_to "Register Your Venue" %></li>
-        <li class="dropdown">
+        <li><%= link_to "Upload Your Art" %></li>
+        <li><%= link_to "Register Your Venue" %></li>
+        <li><%= link_to "See Art" %></li>
+        <li><%= link_to "Browse Venues" %></li>
+        <li><%= link_to "View Artists", artists_path %></li>
+
+
+<!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artists <span class="caret"></span></a>
           <ul class="dropdown-menu">
 			<li>
 				<% if user_signed_in? %> 
-					<%= link_to "View Profile" %>
+					<%= link_to "View/Edit Profile" %>
 					<%= link_to "Upload Your Art" %>
 					<%= link_to "Browse Venues" %>
 					<%= link_to "Edit Account", edit_user_registration_path %>
@@ -39,12 +35,14 @@
 			</li>
           </ul>
         </li>
+
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Patrons <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
 				<% if user_signed_in? %> 
-					<%= link_to "View Profile" %>
+					<%= link_to "View/Edit Profile" %>
 					<%= link_to "View Artists", artists_path %>
 					<%= link_to "Edit Account", edit_user_registration_path %>
 					<%= link_to "Log Out", destroy_user_session_path, method: 'DELETE' %>
@@ -53,7 +51,29 @@
 				<% end %>
 			</li>            
           </ul>
-        </li>
+        </li> -->
+
+      <li>
+        <% if user_signed_in? %> 
+          <%= link_to "Inbox" %>
+        <% else %>
+          <% %>
+        <% end %>
+      </li>
+      <li>
+        <% if user_signed_in? %> 
+          <%= link_to "Profile" %>
+        <% else %>
+          <%= link_to "Register for Artbnb", new_user_registration_path %>
+        <% end %>
+      </li>
+      <li class="active">
+        <% if user_signed_in? %> 
+          <%= link_to "Log Out", destroy_user_session_path, method: 'DELETE' %>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path %>
+        <% end %>
+      </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
