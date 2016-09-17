@@ -2,5 +2,6 @@
 
 <h4>For artists, you can update your profile, etc.</h4>
 
-<img src="http://media.giphy.com/media/UsK5GqD3e0huU/giphy.gif" alt="You rock.">
-<p><%= link_to "Back", :back %></p>
+<p> <%= image_tag @user.profile.url(:thumb) %> </p>
+
+<p><%= link_to "Edit Profile", edit_user_registration_path(@user) %></p>

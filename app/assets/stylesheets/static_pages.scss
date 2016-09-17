@@ -2,8 +2,15 @@
 	padding-top: 50px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+ }
+
 .bg-hero-banner {
 	background-image: url(image-path('homepage-hero-banner-artbnb-paint.jpg'));
+    background-size: cover;
 	padding: 20px;
 	margin-top: 20px;
 	height: 500px;
@@ -11,9 +18,31 @@
 
 .bg-homepage-info {
 	background-image: url(image-path('bg-homepage-register'));
+    background-size: cover;
 	padding: 20px;
 	margin-top: 20px;
 	height: 300px;
+}
+
+.hp-beaker-and-gray {
+    background-image: url(image-path('beaker-and-gray-restaurant-gallery-space.jpg'));
+    background-size: cover;
+    padding: 20px;
+    height: 237px;
+}
+
+.hp-building {
+    background-image: url(image-path('building-co-office-space-gallery.jpg'));
+    background-size: cover;
+    padding: 20px;
+    height: 237px;
+}
+
+.hp-p54 {
+    background-image: url(image-path('pacific54-office-space-gallery.jpg'));
+    background-size: cover;
+    padding: 20px;
+    height: 237px;
 }
 
 .bg-venues-banner {
@@ -51,8 +80,6 @@
     color: #9e9e9e !important;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
- }
+footer ul {
+    float: right;
+}

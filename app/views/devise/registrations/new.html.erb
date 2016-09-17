@@ -4,8 +4,9 @@
     <div class="bg-registration col-lg-12 ">
       <h2>Sign Up For Artbnb!</h2>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
         <%= devise_error_messages! %>
+
         <div class="field">
           <%= f.label :name %><br />
           <%= f.text_field :name, autofocus: true %>
@@ -26,6 +27,11 @@
         <div class="field">
           <%= check_box_tag(:artist) %>
           <%= label_tag(:artist, "I am a Patron") %>
+        </div>
+
+        <div class="field">
+          <%= f.label :profile_image %><br />
+          <%= f.file_field :profile %>
         </div>
 
         <div class="field">

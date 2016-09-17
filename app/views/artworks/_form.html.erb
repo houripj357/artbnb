@@ -7,7 +7,11 @@
 </ul>
 <% end %>
 
-<%= form_for @artwork do |f| %>
+<%= form_for @artwork, html: { multipart: true } do |f| %>
+	<p>
+		<%= f.label :artwork %><br/>
+		<%= f.file_field :image %>
+	</p>
 	<p>
 		<%= f.label :title %><br/>
 		<%= f.text_field :title %>

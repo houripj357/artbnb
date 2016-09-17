@@ -16,7 +16,7 @@
         <li><%= link_to "Register Your Venue" %></li>
         <li><%= link_to "See Art", artworks_path %></li>
         <li><%= link_to "Browse Venues" %></li>
-        <li><%= link_to "View Artists", artists_path %></li>
+        <li><%= link_to "View Artists", users_path %></li>
 
 
 <!--         <li class="dropdown">
@@ -43,7 +43,7 @@
             <li>
 				<% if user_signed_in? %> 
 					<%= link_to "View/Edit Profile" %>
-					<%= link_to "View Artists", artists_path %>
+					<%= link_to "View Artists", users_path %>
 					<%= link_to "Edit Account", edit_user_registration_path %>
 					<%= link_to "Log Out", destroy_user_session_path, method: 'DELETE' %>
 				<% else %>
@@ -62,7 +62,7 @@
       </li>
       <li>
         <% if user_signed_in? %> 
-          <%= link_to "Profile" %>
+          <%= link_to current_user.name, current_user %>
         <% else %>
           <%= link_to "Register for Artbnb", new_user_registration_path %>
         <% end %>

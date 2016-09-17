@@ -2,7 +2,7 @@
 <p>
 <ul>
   <% @artworks.each do |artwork| %>
-  <li>Title: <%= link_to artwork.title, artwork_path(artwork) %> | <%= artwork.description %></li>
+  <li><%= image_tag artwork.image.url(:medium) %> <br/><%= link_to artwork.title, artwork_path(artwork) %></li>
   <% end %>
 </ul>
 </p>
