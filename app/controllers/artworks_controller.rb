@@ -4,10 +4,17 @@ class ArtworksController < ApplicationController
 	end
 
 	def create
-		#render plain: params[:artwork].inspect
 		@artwork = Artwork.new(artwork_params)
-		@artwork.save
-		redirect_to artworks_show(@artwork)
+		if @artwork.save
+			flash[:notice] = "Artwork was successfully uploaded"
+			redirect_to artwork_path(@artwork)
+		else
+			render 'new'
+		end
+	end
+
+	def show 
+		@artwork = Artwork.find(params[:id])
 	end
 
 	def index

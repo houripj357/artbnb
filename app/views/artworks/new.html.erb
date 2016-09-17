@@ -1,5 +1,14 @@
 <h1>Upload your artwork!</h1>
 
+<% if @artwork.errors.any? %>
+<h3>The following errors prevented the artwork from being uploaded:</h3>
+<ul>
+<% @artwork.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+
 <%= form_for @artwork do |f| %>
 	<p>
 		<%= f.label :title %><br/>
