@@ -27,13 +27,20 @@ class ArtworksController < ApplicationController
 		end
 
 	end
-	
+
 	def show 
 		@artwork = Artwork.find(params[:id])
 	end
 
 	def index
 		@artworks = Artwork.all
+	end
+
+	def destroy
+		@artwork = Artwork.find(params[:id])
+		@artwork.destroy
+		flash[:notice] = "Artwork was successfully deleted"
+		redirect_to artworks_path
 	end
 
 private 

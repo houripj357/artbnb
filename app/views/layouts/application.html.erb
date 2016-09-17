@@ -11,12 +11,11 @@
   <body>
 	<%= render 'shared/navbar' %> 
     <div class="main-page-content <%= controller.controller_name %>">
-      <% flash.each do |name, msg| %>
-        <ul>
-          <li><%= msg %></li>
-        </ul>
-      <% end %>
+
+  <%= render 'layouts/messages' %>
+
 <%= yield %>
+
     </div>
 
   <%= render 'shared/footer' %> 
