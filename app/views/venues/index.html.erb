@@ -1,0 +1,11 @@
+<h1>All venues</h1>
+<p>
+<ul>
+  <% @venues.each do |venue| %>
+  <li><%= link_to venue.name, venue_path(venue) %></li>
+  <% end %>
+</ul>
+</p>
+<p>
+	<%= link_to "Register your venue", new_venue_path %>
+</p>

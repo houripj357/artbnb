@@ -1,0 +1,30 @@
+<% if @venue.errors.any? %>
+<h3>The following errors prevented your venue from being registered:</h3>
+<ul>
+<% @venue.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+
+<%= form_for @venue do |f| %>
+	<p>
+		<%= f.label :name %><br/>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :description %><br/>
+		<%= f.text_area :description %>
+	</p>
+	<p>
+		<%= f.label :address %><br/>
+		<%= f.text_area :address %>
+	</p>
+	<p>
+		<%= f.label :phone_number %><br/>
+		<%= f.text_field :phone_number %>
+	</p>	
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
