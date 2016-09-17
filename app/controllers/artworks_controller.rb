@@ -13,6 +13,21 @@ class ArtworksController < ApplicationController
 		end
 	end
 
+	def edit
+		@artwork = Artwork.find(params[:id])
+	end
+
+	def update
+		@artwork = Artwork.find(params[:id])
+		if @artwork.update(artwork_params)
+			flash[:notice] = "Artwork was successfully updated"
+			redirect_to artwork_path(@artwork)
+		else
+			render 'edit'
+		end
+
+	end
+	
 	def show 
 		@artwork = Artwork.find(params[:id])
 	end
