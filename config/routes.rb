@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 	get "artists" => 'users#index'
 	get "/artist/:id", to: 'users#show'
 
-	resources :artwork
+	resources :artworks
 
 end

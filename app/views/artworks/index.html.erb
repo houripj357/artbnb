@@ -1,0 +1,8 @@
+<h1>All artwork</h1>
+<ul>
+  <% @artworks.each do |artwork| %>
+  <li>Title: <%= link_to artwork.title, artworks_path(@artwork) %> | <%= artwork.description %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Home", root_path %>
