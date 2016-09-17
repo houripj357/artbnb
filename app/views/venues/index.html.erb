@@ -2,7 +2,7 @@
 <p>
 <ul>
   <% @venues.each do |venue| %>
-  <li><%= link_to venue.name, venue_path(venue) %></li>
+  <li><%= image_tag venue.image.url(:medium) %> <br/> <%= link_to venue.name, venue_path(venue) %></li>
   <% end %>
 </ul>
 </p>

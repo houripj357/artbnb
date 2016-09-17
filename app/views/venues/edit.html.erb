@@ -1,5 +1,12 @@
-<h1>Edit the details of your venue</h1>
+<div class="container">
 
-<p><%= render 'venueform' %></p>
+  <div class="row">
 
-<p><%= link_to "delete", venue_path(@venue), method: :delete, data: {confirm: "Are you sure?"} %> | <%= link_to "Back", :back %></p>
+  	<div class="col-lg-12">
+		<h1>Edit the details of your venue</h1>
+		<p><%= render 'venueform' %></p>
+		<p><%= link_to "delete", venue_path(@venue), method: :delete, data: {confirm: "Are you sure?"} %> | <%= link_to "Back", :back %></p>
+	</div>
+
+  </div>
+</div>

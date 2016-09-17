@@ -2,6 +2,9 @@
 @import "bootstrap";
 
 @import "static_pages";
+@import "users";
+@import "artworks";
+@import "venues";
 
 .purple-button {
 	background-color: #e692f8;
@@ -19,6 +22,7 @@
 	padding: 20px;
 	margin-top: 20px;
 	height: 450px;
+	margin-bottom: 20px;
 }
 
 .bg-sign-in {
@@ -27,4 +31,38 @@
 	padding: 20px;
 	margin-top: 20px;
 	height: 300px;
+	margin-bottom: 20px;
+}
+
+.page-footer .footer-copyright {
+    font-weight: 300;
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(230,146,248,0.8);
+    background-color: rgba(51,51,51,0.08);
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.purple.lighten-1 {
+    background-color: #eaabf8 !important;
+}
+
+.white-text {
+    color: #FFFFFF !important;
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    margin: 0.82rem 0 0.656rem 0;
+}
+
+.grey-text {
+    color: #9e9e9e !important;
+}
+
+footer ul {
+    float: right;
 }

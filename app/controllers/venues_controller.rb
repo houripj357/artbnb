@@ -17,6 +17,16 @@ class VenuesController < ApplicationController
 		@venue = Venue.find(params[:id])
 	end
 
+	def update
+		@venue = Venue.find(params[:id])
+		if @venue.update(venue_params)
+			flash[:notice] = "Venue details were successfully updated"
+			redirect_to venue_path(@venue)
+		else
+			render 'edit'
+		end
+	end
+
 	def show 
 		@venue = Venue.find(params[:id])
 	end
@@ -27,7 +37,7 @@ class VenuesController < ApplicationController
 
 private 
 	def venue_params
-		params.require(:venue).permit(:name, :description, :address, :phone_number)
+		params.require(:venue).permit(:name, :description, :address, :phone_number, :image)
 	end
 
 end

@@ -7,7 +7,11 @@
 </ul>
 <% end %>
 
-<%= form_for @venue do |f| %>
+<%= form_for @venue, html: { multipart: true } do |f| %>
+	<p>
+		<%= f.label :venue %><br/>
+		<%= f.file_field :image %>
+	</p>
 	<p>
 		<%= f.label :name %><br/>
 		<%= f.text_field :name %>
