@@ -7,11 +7,11 @@ class ArtworkPolicy < ApplicationPolicy
 	end
 
 	def new
-		@current_user.artist? || @current_user.admin? 
+		# @current_user.artist? || @current_user.admin? 
 	end
 
 	def create
-		@current_user.artist? || @current_user.admin? 
+		# @current_user.artist? || @current_user.admin? 
 	end
 
 	def edit

@@ -5,8 +5,12 @@ Rails.application.routes.draw do
 
 	get "/alt" => 'static_pages#alt'
 
-	resources :users
-	resources :artworks
-	resources :venues
+	resources :users  
+		resources :artworks
+		resources :venues
+	
+
+	get "artworks" => 'artworks#index'
+	get "venues" => 'venues#index'
 
 end

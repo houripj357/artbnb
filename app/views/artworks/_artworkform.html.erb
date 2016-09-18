@@ -1,10 +1,23 @@
 <% if @artwork.errors.any? %>
-<h3>The following errors prevented the artwork from being uploaded:</h3>
-<ul>
-<% @artwork.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
+	<div class="row">
+	  	<div class="col-xs-8 col-xs-offset-2">
+	  		<div class="panel panel-danger">
+	  			<div class="panel-heading">
+	  				<h3 class="panel-title">
+	  					<%= pluralize(@artwork.errors.count, "error") %>
+	  					prohibited this artwork from being uploaded
+	  				</h3>
+	  				<div class="panel-body">
+	  					<ul>
+	  						<% @artwork.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <% end %>
 
 <%= form_for @artwork, html: { multipart: true } do |f| %>

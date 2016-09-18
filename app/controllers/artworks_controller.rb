@@ -9,7 +9,8 @@ class ArtworksController < ApplicationController
 
 	def create
 		@artwork = Artwork.new(artwork_params)
-		authorize User
+		@artwork.user = current_user
+		# authorize User
 		if @artwork.save
 			flash[:notice] = "Artwork was successfully uploaded"
 			redirect_to artwork_path(@artwork)
