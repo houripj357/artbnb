@@ -14,4 +14,13 @@ class UserPolicy < ApplicationPolicy
 		@current_user.artist? || @current_user.admin? 
 	end
 
+	def update? 
+		@current_user.admin? || @current_user.patron? || @current_user.artist?
+	end
+
+	def destroy? 
+		return false if @current_user = @user
+		@current_user.admin?
+	end
+
 end

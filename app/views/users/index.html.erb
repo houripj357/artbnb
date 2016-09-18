@@ -1,7 +1,7 @@
 <h1>All artists</h1>
 <ul>
   <% @users.each do |user| %>
-  <li> <%= image_tag user.profile.url(:thumb) %> <br /> <%= link_to user.name, user_path(user) %> <br /> send this artist a message (I must add this functionality) </li><br />
+  <li> <%= image_tag user.profile.url(:thumb) %> <br /> <%= link_to user.name, user_path(user) %> <br /> send this artist a message (I must add this functionality) <br /> <%= button_to("Delete this user's account", user_path(user), data: { confirm: "Are you sure?" }, method: :delete)unless user == current_user %></li><br />
   <% end %>
 </ul>
 
