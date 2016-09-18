@@ -1,7 +1,7 @@
-<h2> Welcome <%= current_user.name %> to your profile page!</h2>
+<h2> Welcome to <%= @user.name %>'s profile page!</h2>
 
-<h4>For artists, you can update your profile, etc.</h4>
+<p> <%= image_tag @user.profile.url(:thumb) %> must add gallery of user's artwork here as thumbnails </p>
 
-<p> <%= image_tag @user.profile.url(:thumb) %> </p>
+<p>send <%= @user.name %> a message (I will need to add this functionality)</p>
 
-<p><%= link_to "Edit Profile", edit_user_registration_path(@user) %></p>
+<p><%= link_to "See More Artists", users_path %></p>

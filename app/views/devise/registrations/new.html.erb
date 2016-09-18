@@ -17,20 +17,13 @@
           <%= f.email_field :email %>
         </div>
 
-        <h5>Select one:</h5>
-
-        <div class="field">
-          <%= check_box_tag(:artist) %>
-          <%= label_tag(:artist, "I am an Artist") %>
+        <div class="form-group">
+          <%= f.label :select_one %>
+          <%= f.select(:role, [['Patron', 'patron'], ['Artist', 'artist']]) %>
         </div>
 
         <div class="field">
-          <%= check_box_tag(:artist) %>
-          <%= label_tag(:artist, "I am a Patron") %>
-        </div>
-
-        <div class="field">
-          <%= f.label :profile_image %><br />
+          <%= f.label :upload_a_profile_image %><br />
           <%= f.file_field :profile %>
         </div>
 

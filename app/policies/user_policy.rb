@@ -1,4 +1,4 @@
-class UserPolicy
+class UserPolicy < ApplicationPolicy
 	attr_reader :current_user, :model
 
 	def initialize(current_user, model)
@@ -8,6 +8,10 @@ class UserPolicy
 
 	def index?
 		false
+	end
+
+	def show?
+		@current_user.artist? || @current_user.admin? 
 	end
 
 end
