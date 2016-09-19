@@ -9,7 +9,8 @@ class VenuesController < ApplicationController
 
 	def create 
 		@venue = Venue.new(venue_params)
-		authorize User
+		@venue.user = current_user
+		# authorize User
 		if @venue.save
 			flash[:notice] = "Venue was successfully registered"
 			redirect_to venue_path(@venue)

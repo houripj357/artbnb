@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_many :artworks 
+	has_many :posts
 	
 	enum role: [:patron, :artist, :admin]
 	after_initialize :set_default_role, :if => :new_record?

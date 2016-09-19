@@ -1,0 +1,3 @@
+<p> <%= image_tag @user.profile.url(:thumb) %> <% @user.artworks.each do |artwork| %>
+  <li><%= image_tag artwork.image.url(:thumb) %> <br/> <%= link_to artwork.title, artworks_path(artwork) %></li><br />
+  <% end %> </p>

@@ -1,10 +1,12 @@
-<h2>Edit Your Account Details</h2>
+<h2>Hello, <%= @user.name %>. Feel free to edit your account details.</h2>
+
+<%= image_tag @user.profile.url(:thumb) %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :profile %><br />
+    <%= f.label :want_to_update_your_profile_image? %><br />
     <%= f.file_field :profile %>
   </div>
 
@@ -18,9 +20,9 @@
     <%= f.email_field :email %>
   </div>
 
-  <div class="field">
-    <%= check_box_tag(:artist) %>
-    <%= label_tag(:artist, "I am an Artist") %>
+  <div class="form-group">
+    <%= f.label :select_one %>
+    <%= f.select(:role, [['Patron', 'patron'], ['Artist', 'artist']]) %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
