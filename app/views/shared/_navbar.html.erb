@@ -12,8 +12,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Gallery" %></li>
-        <li><%= link_to "Browse Venues" %></li>
+        <li><%= link_to "Gallery", artworks_path %></li>
+        <li><%= link_to "Browse Venues", venues_path %></li>
         <li><%= link_to "View Artists", users_path %></li>
 
       <li>
@@ -26,7 +26,7 @@
 
       <li class="active">
         <% if user_signed_in? %> 
-          <%= link_to "Log Out", destroy_user_session_path, method: 'DELETE' %>
+          <% %>
         <% else %>
           <%= link_to "Log In", new_user_session_path %>
         <% end %>
@@ -38,10 +38,11 @@
           <ul class="dropdown-menu">
             <li>
           <%= link_to "Inbox" %>    
-          <%= link_to "View Profile" %>
-            <%= link_to "Upload Your Art" %>
-            <%= link_to "Register Your Venue" %>
-          <%= link_to "Edit Account" %>
+          <%= link_to "View Profile", user_path(current_user) %>
+            <%= link_to "Upload Your Art", new_artwork_path %>
+            <%= link_to "Register Your Venue", new_venue_path %>
+          <%= link_to "Edit Account", edit_user_path(current_user) %>
+          <%= link_to "Log Out", destroy_user_session_path, method: 'DELETE' %>
             </li>
         <% else %>
           <%= %>

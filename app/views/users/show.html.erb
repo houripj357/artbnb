@@ -1,6 +1,8 @@
 <h2> Welcome to <%= @user.name %>'s profile page!</h2>
 
-<p> <%= image_tag @user.profile.url(:thumb) %> must add gallery of user's artwork here as thumbnails </p>
+<p> <%= image_tag @user.profile.url(:thumb) %> <% @user.artworks.each do |artwork| %>
+  <li><%= image_tag artwork.image.url(:thumb) %> <br/> <%= link_to artwork.title, artworks_path(artwork) %></li><br />
+  <% end %> </p>
 
 <p>send <%= @user.name %> a message (I will need to add this functionality)</p>
 

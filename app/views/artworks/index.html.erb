@@ -2,10 +2,10 @@
 <p>
 <ul>
   <% @artworks.each do |artwork| %>
-  <li><%= image_tag artwork.image.url(:medium) %> <br/> <%= link_to artwork.title, art_path(artwork) %></li>
+  <li><%= image_tag artwork.image.url(:medium) %> <br/> <%= link_to artwork.title, artworks_path(artwork) %></li><br />
   <% end %>
 </ul>
 </p>
 <p>
-	<%= link_to "Upload artwork" %>
+	<%= link_to "Upload artwork", new_artwork_path %>
 </p>

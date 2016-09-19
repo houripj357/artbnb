@@ -14,6 +14,10 @@ class UserPolicy < ApplicationPolicy
 		@current_user.artist? || @current_user.admin? 
 	end
 
+	def edit 
+		@current_user.admin? || @current_user.patron? || @current_user.artist?
+	end
+
 	def update? 
 		@current_user.admin? || @current_user.patron? || @current_user.artist?
 	end
