@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 	resources :users  
 	resources :artworks
 	resources :venues
+	resources :conversations do
+		resources :messages
+	end
 	
 	get "artworks" => 'artworks#index'
 	get "venues" => 'venues#index'
