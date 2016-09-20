@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 	get "/alt" => 'static_pages#alt'
 
 	resources :users  
-	resources :artworks
+	resources :artworks do 
+		resource :like, module: :artworks
+	end
 	resources :venues
 	resources :conversations do
 		resources :messages

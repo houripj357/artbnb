@@ -1,0 +1,5 @@
+<% if user_signed_in? && current_user.likes?(@artwork) %>
+	<%= link_to "Unlike", artwork_like_path(@artwork), method: :delete %>
+<% else %>
+	<%= link_to "Like", artwork_like_path(@artwork), method: :post %>
+<% end %>

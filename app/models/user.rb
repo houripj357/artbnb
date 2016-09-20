@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 	has_many :artworks 
-	has_many :posts
-	
+	has_many :venues 
+
 	enum role: [:patron, :artist, :admin]
 	after_initialize :set_default_role, :if => :new_record?
 
@@ -21,5 +21,13 @@ class User < ApplicationRecord
 	def mailboxer_email(object)
 		self.email
 	end
+
+	has_many :likes
+
+	def likes?(artwork)
+		artwork.likes.where(user_id: id).any?
+	end
+
+
 
 end

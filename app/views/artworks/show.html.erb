@@ -2,3 +2,7 @@
 <p> <%= image_tag @artwork.image.url(:large) %> </p>
 <p> <%= @artwork.description %> </p>
 <p><%= link_to "Edit Artwork", edit_artwork_path(@artwork) %> | <%= link_to "See More Artwork", artworks_path %></p>
+
+<div id="likes">
+	<%= render partial: "likes" %>
+</div>
