@@ -15,23 +15,23 @@ class ArtworkPolicy < ApplicationPolicy
 	end
 
 	def edit
-		@current_user.artist? || @current_user.admin? 
+		# @current_user.artist? || @current_user.admin? 
 	end
 
 	def update
-		@current_user.artist? || @current_user.admin? 
+		# @current_user.artist? || @current_user.admin? 
 	end
 
 	def destroy
-		@current_user.admin? 
+		# @current_user.admin? 
 	end
 
 	def index?
-		false
+		true 
 	end
 
 	def show?
-		false 
+		true 
 	end
 
 end

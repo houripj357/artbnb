@@ -20,13 +20,13 @@ class VenuesController < ApplicationController
 	end
 
 	def edit
-		authorize User
+		# authorize User
 		@venue = Venue.find(params[:id])
 	end
 
 	def update
 		@venue = Venue.find(params[:id])
-		authorize User
+		# authorize User
 		raise "not authorized" unless UserPolicy.new(current_user, @venue).update?
 		if @venue.update(venue_params)
 			flash[:notice] = "Venue details were successfully updated"
@@ -46,7 +46,7 @@ class VenuesController < ApplicationController
 
 	def destroy
 		@venue = Venue.find(params[:id])
-		authorize User
+		# authorize User
 		@venue.destroy
 		flash[:notice] = "Venue was successfully deleted"
 		redirect_to venues_path

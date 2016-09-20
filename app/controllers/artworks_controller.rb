@@ -21,12 +21,12 @@ class ArtworksController < ApplicationController
 
 	def edit
 		@artwork = Artwork.find(params[:id])
-		authorize User
+		# authorize User
 	end
 
 	def update
 		@artwork = Artwork.find(params[:id])
-		authorize User
+		# authorize User
 		if @artwork.update(artwork_params)
 			flash[:notice] = "Artwork was successfully updated"
 			redirect_to artwork_path(@artwork)
@@ -45,7 +45,7 @@ class ArtworksController < ApplicationController
 
 	def destroy
 		@artwork = Artwork.find(params[:id])
-		authorize User
+		# authorize User
 		@artwork.destroy
 		flash[:notice] = "Artwork was successfully deleted"
 		redirect_to artworks_path

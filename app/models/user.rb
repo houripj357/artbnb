@@ -18,4 +18,8 @@ class User < ApplicationRecord
 	validates_attachment_content_type :profile, content_type: /\Aimage\/.*\z/
 	# validates_attachment_content_type :profile, :content_type => ["jpg", "jpeg", "png", "gif"]
 
+	def mailboxer_email(object)
+		self.email
+	end
+
 end

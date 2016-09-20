@@ -7,11 +7,11 @@ class UserPolicy < ApplicationPolicy
 	end
 
 	def index?
-		false
+		true
 	end
 
 	def show?
-		@current_user.artist? || @current_user.admin? 
+		@current_user.artist? || @current_user.patron? || @current_user.admin? 
 	end
 
 	def edit 
@@ -23,7 +23,6 @@ class UserPolicy < ApplicationPolicy
 	end
 
 	def destroy? 
-		return false if @current_user = @user
 		@current_user.admin?
 	end
 
