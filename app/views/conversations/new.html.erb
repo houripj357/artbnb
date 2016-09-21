@@ -13,5 +13,9 @@
 		<%= text_area_tag :body, nil, placeholder: "Leave a message" %>
 	</div>
 
+	<div>
+		<%= file_field_tag :attachment %>
+	</div>
+
 	<%= submit_tag %>	
 <% end %>

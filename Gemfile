@@ -7,6 +7,7 @@ gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'pundit'
 gem 'mailboxer', github: 'mailboxer/mailboxer'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

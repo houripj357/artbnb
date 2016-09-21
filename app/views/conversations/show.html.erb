@@ -1,15 +1,24 @@
 <h1><%= @conversation.subject %></h1>
 
+<hr />
+
 <% @conversation.receipts_for(current_user).each do |receipt| %>
 	<div>
 		<div>From: <%= receipt.message.sender.name %> </div>
 		<p><%= receipt.message.body %></p>
+
+		<% if receipt.message.attachment? %>
+			<strong>Attachment</strong>
+		<%= link_to receipt.message.attachment.file.filename, receipt.message.attachment.url, target: :blank %>
+		<% end %>
 	</div>
+	<hr />
 <% end %>
 
 <%= form_tag conversation_messages_path(@conversation), method: :post do %>
 	<div>
 		<%= text_area_tag :body %>
+		<%= file_field_tag :attachment %>
 	</div>
 
 	<%= submit_tag %>	
