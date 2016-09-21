@@ -28,6 +28,4 @@ class User < ApplicationRecord
 		artwork.likes.where(user_id: id).any?
 	end
 
-
-
 end

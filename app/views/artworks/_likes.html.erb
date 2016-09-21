@@ -3,3 +3,9 @@
 <% else %>
 	<%= link_to "Like", artwork_like_path(@artwork), method: :post %>
 <% end %>
+
+<%= @artwork.likes.count %>
+
+<% @artwork.likes.each do |like| %>
+	<%= image_tag like.user.profile.url, width: 20 %>
+<% end %>
