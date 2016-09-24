@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 		end
 	end
 
-
+	# match 'auth/:provider/callback', to: 'sessions#create'
 	
 	get "artworks" => 'artworks#index'
 	get "venues" => 'venues#index'

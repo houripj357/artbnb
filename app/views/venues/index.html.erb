@@ -1,11 +1,25 @@
-<h1>All venues</h1>
+<p><center><h1>All venues</h1></center></p>
+<hr />
 <p>
 <ul>
-  <% @venues.each do |venue| %>
-  <li><%= image_tag venue.image.url(:medium) %> <br/> <%= link_to venue.name, venue_path(venue) %></li><br />
-  <% end %>
+<% @venues.in_groups_of(3, false).each do |group| %>
+  <div class='row'>
+  	<center>
+    <% group.each do |venue| %>
+    <li>
+      <div class='col-md-4'>
+        <%= link_to image_tag(venue.image.url(:medium)), venue_path(venue) %>
+        <h4><%= venue.name %></h4>
+        <h6><%= venue.address %></h6>
+        <%= button_to "Message venue owner", new_conversation_path(@user), :class => "btn btn-warning btn-lg green-button" %><br />
+        </li>
+    <% end %>
+</center>
+  </div>
+<% end %>
 </ul>
 </p>
+<hr />
 <p>
-	<%= link_to "Register your venue", new_venue_path %>
+<%= link_to "Register your venue", new_venue_path %>
 </p>

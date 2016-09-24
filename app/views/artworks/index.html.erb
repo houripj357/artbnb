@@ -1,11 +1,31 @@
-<h1>All artwork</h1>
+<p><center><h1>All artwork</center></h1></p>
+<hr />
 <p>
 <ul>
-  <% @artworks.each do |artwork| %>
-  <li><%= image_tag artwork.image.url(:medium) %> <br/> <%= link_to artwork.title, artwork_path(artwork) %> </li><br />
-  <% end %>
+<% @artworks.in_groups_of(3, false).each do |group| %>
+  <div class='row'>
+  	<center>
+    <% group.each do |artwork| %>
+    <li>
+      <div class='col-md-4'>
+        <%= link_to image_tag(artwork.image.url(:medium)), artwork_path(artwork) %>
+        <h4><%= artwork.title %></h4>
+		<p>Likes: <%= artwork.likes.count %>
+				<% artwork.likes.each do |like| %>
+				<%= image_tag like.user.profile.url, width: 20 %>
+			<% end %>
+		</p>
+        <h5>Artist Name: <%= artwork.user.name %></h5>
+        <%= button_to "Message artist", new_conversation_path(@user), :class => "btn btn-warning btn-lg green-button" %>
+        <br />
+        </li>
+    <% end %>
+	</center>
+  </div>
+<% end %>
 </ul>
 </p>
+<hr />
 <p>
-	<%= link_to "Upload artwork", new_artwork_path %>
+<%= link_to "Upload your art!", new_artwork_path %>
 </p>

@@ -1,8 +1,24 @@
-<h1>All artists</h1>
+<p><center><h1>All artists</h1></center></p>
+<hr />
+<p>
 <ul>
-  <% @users.each do |user| %>
-  <li> <%= link_to image_tag user.profile.url(:thumb) %> <br /> <%= link_to user.name, user_path(user) %> <br /> <%= link_to "Message me", new_conversation_path(@user) %> </li><br />
-  <% end %>
+<% @users.where("role = 1").in_groups_of(4, false).each do |group| %>
+  <div class='row'>
+  	<center>
+    <% group.each do |user| %>
+    <li>
+      <div class='col-md-3'>
+        <%= image_tag(user.profile.url(:thumb)) %>
+        <h3><%= link_to user.name, user_path(user) %></h3>
+        <div><%= link_to "Message me", new_conversation_path(user) %></div><br />
+        </li>
+    <% end %>
+	</center>
+  </div>
+<% end %>
 </ul>
-
+</p>
+<hr />
+<p>
 <%= link_to "Home", root_path %>
+</p>
