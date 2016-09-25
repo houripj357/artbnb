@@ -10,12 +10,12 @@
       <div class='col-md-4'>
         <%= link_to image_tag(artwork.image.url(:medium)), artwork_path(artwork) %>
         <h4><%= artwork.title %></h4>
+        <h5>Artist Name: <%= artwork.user.name %></h5>
 		<p>Likes: <%= artwork.likes.count %>
 				<% artwork.likes.each do |like| %>
 				<%= image_tag like.user.profile.url, width: 20 %>
 			<% end %>
 		</p>
-        <h5>Artist Name: <%= artwork.user.name %></h5>
         <%= button_to "Message artist", new_conversation_path(@user), :class => "btn btn-warning btn-lg green-button" %>
         <br />
         </li>
