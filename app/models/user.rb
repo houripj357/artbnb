@@ -5,9 +5,11 @@ class User < ApplicationRecord
 	enum role: [:patron, :artist, :admin]
 	after_initialize :set_default_role, :if => :new_record?
 
-	# def set_default_role 
-	# 	self.role ||= :patron
-	# end
+	def set_default_role 
+		self.role ||= :patron
+	end
+
+	has_and_belongs_to_many :roles
 
   	devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
@@ -27,5 +29,9 @@ class User < ApplicationRecord
 	def likes?(artwork)
 		artwork.likes.where(user_id: id).any?
 	end
+
+  	def role?(role)
+      return !!self.roles.find_by_name(role.to_s.camelize)
+  	end
 
 end
