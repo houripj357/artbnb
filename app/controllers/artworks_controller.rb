@@ -1,16 +1,16 @@
 class ArtworksController < ApplicationController
-	# before_filter :authenticate_user!
-	# after_action :verify_authorized
+	before_action :authenticate_user!, only: :new
+	after_action :verify_authorized
 	
 	def new 
 		@artwork = Artwork.new
-		# authorize User
+		authorize User
 	end
 
 	def create
 		@artwork = Artwork.new(artwork_params)
 		@artwork.user = current_user
-		# authorize User
+		authorize User
 		if @artwork.save
 			flash[:notice] = "Artwork was successfully uploaded"
 			redirect_to artwork_path(@artwork)
@@ -21,12 +21,12 @@ class ArtworksController < ApplicationController
 
 	def edit
 		@artwork = Artwork.find(params[:id])
-		# authorize User
+		authorize User
 	end
 
 	def update
 		@artwork = Artwork.find(params[:id])
-		# authorize User
+		authorize User
 		if @artwork.update(artwork_params)
 			flash[:notice] = "Artwork was successfully updated"
 			redirect_to artwork_path(@artwork)
@@ -37,15 +37,17 @@ class ArtworksController < ApplicationController
 
 	def show 
 		@artwork = Artwork.find(params[:id])
+		authorize User
 	end
 
 	def index
 		@artworks = Artwork.all
+		authorize User
 	end
 
 	def destroy
 		@artwork = Artwork.find(params[:id])
-		# authorize User
+		authorize User
 		@artwork.destroy
 		flash[:notice] = "Artwork was successfully deleted"
 		redirect_to artworks_path

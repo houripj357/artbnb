@@ -11,7 +11,7 @@ class UserPolicy < ApplicationPolicy
 	end
 
 	def show?
-		@current_user.artist? || @current_user.patron? || @current_user.admin? 
+		@current_user.admin? || @current_user.patron? || @current_user.artist? 
 	end
 
 	def edit 

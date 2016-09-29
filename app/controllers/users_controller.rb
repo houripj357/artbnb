@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!, only: :show
-	before_filter :authenticate_user!
-	# after_action :verify_authorized
+	before_action :authenticate_user!, only: :index
+	after_action :verify_authorized
 	
 	def show 
 		@user = User.find(params[:id])

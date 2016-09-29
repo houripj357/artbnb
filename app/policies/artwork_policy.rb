@@ -7,23 +7,23 @@ class ArtworkPolicy < ApplicationPolicy
 	end
 
 	def new
-		# @current_user.artist? || @current_user.admin? 
+		true 
 	end
 
 	def create
-		# @current_user.artist? || @current_user.admin? 
+		@current_user.artist? || @current_user.admin? 
 	end
 
 	def edit
-		# @current_user.artist? || @current_user.admin? 
+		@current_user.artist? || @current_user.admin? 
 	end
 
 	def update
-		# @current_user.artist? || @current_user.admin? 
+		@current_user.artist? || @current_user.admin? 
 	end
 
 	def destroy
-		# @current_user.admin? 
+		@current_user.admin? 
 	end
 
 	def index?

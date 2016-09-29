@@ -39,7 +39,7 @@
             <li>
           <%= link_to "Inbox", conversations_path %>    
           <%= link_to "View Profile", user_path(current_user) %>
-        <% if current_user.role = "artist" %> 
+        <% if current_user.artist? %> 
           <%= link_to "Upload Your Art", new_artwork_path %>
         <% else %>
           <%= link_to "Register Your Venue", new_venue_path %>

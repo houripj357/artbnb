@@ -53,8 +53,13 @@
   </div>
 <% end %>
 
-<!-- <h3>Do you want to delete your account?</h3>
+  <% if current_user.admin? %> 
+    <h3>Do you want to delete your account?</h3>
 
-<p>Are you unhappy? We're not really stoked that you are thinking about leaving the Artbnb family. Are you sure you want to go? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
- -->
+    <p>Are you unhappy? We're not really stoked that you are thinking about leaving the Artbnb family. Are you sure you want to go? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+  <% else %>
+    <% %>
+  <% end %>
+
 <%= link_to "Back", :back %>
