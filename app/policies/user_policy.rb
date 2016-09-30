@@ -11,15 +11,15 @@ class UserPolicy < ApplicationPolicy
 	end
 
 	def show?
-		@current_user.admin? || @current_user.patron? || @current_user.artist? 
+		true 
 	end
 
 	def edit 
-		@current_user.admin? || @current_user.patron? || @current_user.artist?
+		true
 	end
 
 	def update? 
-		@current_user.admin? || @current_user.patron? || @current_user.artist?
+		true
 	end
 
 	def destroy? 
