@@ -1,16 +1,10 @@
 class ArtworkPolicy < ApplicationPolicy
-	attr_reader :current_user, :model
 
-	def initialize(current_user, model)
-		@current_user = current_user
-		@user = model
+	def new?
+		@current_user.artist? || @current_user.admin?  
 	end
 
-	def new
-		true 
-	end
-
-	def create
+	def create?
 		@current_user.artist? || @current_user.admin? 
 	end
 

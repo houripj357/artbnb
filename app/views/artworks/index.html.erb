@@ -27,5 +27,10 @@
 </p>
 <hr />
 <p>
-<%= link_to "Upload your art!", new_artwork_path %>
+  <% if current_user.artist? %> 
+    <%= link_to "Upload your art!", new_artwork_path %>
+    <hr />
+  <% else %>
+    <% %>
+  <% end %>
 </p>

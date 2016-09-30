@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-	before_action :authenticate_user!, only: :new
+	before_filter :authenticate_user!, only: :new
 	after_action :verify_authorized
 	
 	def new 

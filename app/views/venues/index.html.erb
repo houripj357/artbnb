@@ -21,5 +21,10 @@
 </p>
 <hr />
 <p>
-<%= link_to "Register your venue!", new_venue_path %>
+  <% if current_user.patron? %> 
+    <%= link_to "Register your venue!", new_venue_path %>
+    <hr />
+  <% else %>
+    <% %>
+  <% end %>
 </p>
