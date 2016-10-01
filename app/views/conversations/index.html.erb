@@ -18,10 +18,10 @@ Total Conversations: <%= @conversations.count %>
 	<div>
 		<% if conversation.is_unread?(current_user) %>
 		<strong>
-			<%= link_to conversation.subject, conversation_path(conversation) %>, <%= conversation.created_at.strftime("%m/%m/%Y %l:%M %p ") %>
+			<%= link_to conversation.subject, conversation_path(conversation) %>, <%= conversation.created_at.strftime("%m/%d/%Y %l:%M %p ") %>
 		</strong>
 		<% else %>
-			<%= link_to conversation.subject, conversation_path(conversation) %>, <%= conversation.created_at.strftime("%m/%m/%Y %l:%M %p ") %>
+			<%= link_to conversation.subject, conversation_path(conversation) %>, <%= conversation.created_at.strftime("%m/%d/%Y %l:%M %p ") %>
 		<% end %>
 	</div>
 <% end %>
