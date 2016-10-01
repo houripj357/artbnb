@@ -5,7 +5,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3.1'
 gem 'devise' 
 gem "paperclip", "~> 5.0.0"
 gem 'pundit'
-gem 'mailboxer', github: 'mailboxer/mailboxer'
+gem 'mailboxer'
 gem 'mini_magick'
 gem 'omniauth-facebook'
 
