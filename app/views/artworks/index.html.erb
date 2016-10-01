@@ -16,7 +16,7 @@
 				<%= image_tag like.user.profile.url, width: 20 %>
 			<% end %>
 		</p>
-        <%= button_to "Message artist", new_conversation_path(@user), :class => "btn btn-warning btn-lg green-button" %>
+        <%= button_to "Message artist", new_conversation_path(user), :class => "btn btn-warning btn-lg green-button" %>
         <br />
         </li>
     <% end %>
