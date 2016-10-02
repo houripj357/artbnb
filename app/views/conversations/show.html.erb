@@ -11,6 +11,8 @@
 		<div>
 			<% if receipt.message.attachment? %>
 				<%= link_to receipt.message.attachment.file.filename, receipt.message.attachment.url, target: :blank %>
+			<% else %>
+				what
 			<% end %>
 		</div>
 		<br />

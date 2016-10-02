@@ -33,7 +33,7 @@ class ConversationsController < ApplicationController
 			params[:body],
 			params[:subject], 
 			true, 
-			params[:attachment]
+			params[:attachment],
 			)
 		redirect_to all_conversations_path
 	end
