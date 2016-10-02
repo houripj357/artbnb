@@ -8,20 +8,22 @@
 		<div>Message # <%= index + 1 %> from <i><%= receipt.message.sender.name %>, <%= receipt.message.sender.role %></i></div>
 		<br />
 		<p><%= receipt.message.body %></p>
-		<div>This message was sent on: <%= receipt.message.created_at.strftime("%b. %e, %l:%M %p") %></div>
-
-		<% if receipt.message.attachment? %>
-			<strong>Attachment</strong>
-		<%= link_to receipt.message.attachment.file.filename, receipt.message.attachment.url, target: :blank %>
-		<% end %>
+		<div>
+			<% if receipt.message.attachment? %>
+				<%= link_to receipt.message.attachment.file.filename, receipt.message.attachment.url, target: :blank %>
+			<% end %>
+		</div>
+		<br />
+		<div>
+			This message was sent on: <%= receipt.message.created_at.strftime("%b. %e, %l:%M %p") %>
+		</div>
 	</div>
-	<br />
 <% end %>
 
 <hr />
 
 <p>Your response:</p>
-<%= form_tag conversation_messages_path(@conversation), method: :post do %>
+<%= form_tag conversation_messages_path(@conversation), { method: :post, multipart: true } do %>
 	<div>
 		<%= text_area_tag :body %>
 		<%= file_field_tag :attachment %>
