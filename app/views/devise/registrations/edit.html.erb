@@ -1,4 +1,8 @@
-<h2>Hello, <%= @user.name %>. Feel free to edit your account details.</h2>
+<h2>Hello, <%= @user.name %>.</h2>
+
+<p>Feel free to edit your account details.</p>
+
+<hr />
 
 <%= image_tag @user.profile.url(:thumb) %>
 
@@ -54,6 +58,7 @@
 <% end %>
 
   <% if current_user.admin? %> 
+  <hr />
     <h3>Do you want to delete your account?</h3>
 
     <p>Are you unhappy? We're not really stoked that you are thinking about leaving the Artbnb family. Are you sure you want to go? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
@@ -62,4 +67,8 @@
     <% %>
   <% end %>
 
-<%= link_to "Back", :back %>
+<hr />
+
+  <%= link_to "Back", :back %>
+
+<hr />
