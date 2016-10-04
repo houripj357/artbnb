@@ -20,28 +20,103 @@
 
   <div class="row" align="center">
     <div class="col-lg-2 col-xs-2"> </div>
-    <div class="col-lg-8 col-xs-8"><h2>How Artbnb Works</h2></div>
+    <div class="col-lg-8 col-xs-8"><h1>HOW ARTBNB WORKS</h1></div>
     <div class="col-lg-2 col-xs-2"> </div>
   </div>
   <div class="row" align="center">
-    <div class="col-lg-2 col-xs-2"> </div>
-    <div class="col-lg-4 col-xs-4"><h4>If You Are An Artist</h4></div>
-    <div class="col-lg-4 col-xs-4"><h4>If You Are In Need Of Art</h4></div>
-    <div class="col-lg-2 col-xs-2"> </div>
-  </div>
-  <div class="row" align="center">
-    <div class="col-lg-4 col-md-4 col-xs-12 bg-danger"> add icon <br><h3>Register as an Artist</h3></div>
-    <div class="col-lg-4 col-md-4 col-xs-12 bg-warning"> add icon <br><h3>Upload your Artwork</h3></div>
-    <div class="col-lg-4 col-md-4 col-xs-12 bg-success"> add icon <br><h3>Connect with Buyers</h3></div>
-  </div> 
+    <div class="container" align"center">
+      <div class="col-lg-2 col-md-1">
+      </div>
+      <div class="col-lg-4 col-md-5 col-xs-6">
+        <ul class="nav nav-tabs nav-justified">
+          <li><a href="#Artist" data-toggle="tab"><h4>If You Are An Artist</h4></a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-5 col-xs-6">
+        <ul class="nav nav-tabs nav-justified">
+          <li><a href="#Patron" data-toggle="tab"><h4>If You Are In Need Of Art</h4></a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-1">
+      </div>
 
-  <div class="container-fluid hidden-sm hidden-xs">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="Artist">
+          <div class="container" align="center">
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-how-1 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Register As An Artist</h4>
+              <p class="hidden-xs">Complete the sign up form to create an account with Artbnb. </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-artists-2 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Upload your Artwork</h4>
+              <p class="hidden-xs">Submit an image and details of your artwork and set a price. </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-artists-3 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Connect With Patrons</h4>
+              <p class="hidden-xs">Connect with local patrons to market your art and services. </p>
+            </div>
+          </div>
+            <div class="container-fluid hidden-sm hidden-xs">
+  <div class="row bg-green-banner" align="center">
+    <h2 class="padding">Artworks</h2>
+    <div class="col-lg-4 col-md-4 col-xs-12">
+      <div class="thumbnail hp-harumi-abe">
+        <div class="caption">
+          <h1><br /></h1>
+          <p><a href="/artworks/6" class="btn btn-default" role="button">In The Meadow</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12">
+      <div class="thumbnail hp-john-hoon">
+        <div class="caption">
+          <h1><br /></h1>
+          <p><a href="/artworks/3" class="btn btn-default" role="button">This Is Art</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-xs-12">
+      <div class="thumbnail hp-food-artbnb">
+        <div class="caption">
+          <h1><br /></h1>
+          <p><a href="/artworks/5" class="btn btn-default" role="button">F.O.O.D.</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3"> </div>
+    <div class="col-lg-3 col-xs-12"><%= button_to "See more Artwork!", artworks_path, :class => "btn btn-warning btn-lg purple-button", :method => :get %></div>
+    <div class="col-lg-3 col-xs-12 hidden-md hidden-sm hidden-xs"><%= button_to "Upload Your Artwork!", new_artwork_path, :class => "btn btn-warning btn-lg purple-button", :method => :get %></div>
+    <div class="col-lg-3"> </div>
+  </div>
+</div>
+        </div>
+        <div class="tab-pane fade" id="Patron">
+          <div class="container" align="center">
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-how-1 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Register As A Patron</h4>
+              <p class="hidden-xs">Complete the sign up form to create an account with Artbnb. </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-patrons-2 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Browse Gallery</h4>
+              <p class="hidden-xs">Click on “View Gallery” to browse artworks and like your favs. </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-patrons-3 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Buy Artwork</h4>
+              <p class="hidden-xs">Connect with local artists to buy art in support of your community.</p>
+            </div>
+          </div>
+            <div class="container-fluid hidden-sm hidden-xs">
   <div class="row bg-green-banner" align="center">
     <h2 class="padding">Venues</h2>
     <div class="col-lg-4 col-md-4 col-xs-12">
       <div class="thumbnail hp-beaker-and-gray">
         <div class="caption">
-          <h1><br /></h1>
           <h1><br /></h1>
           <p><a href="/venues/1" class="btn btn-default" role="button">Beaker & Gray</a></p>
         </div>
@@ -51,7 +126,6 @@
       <div class="thumbnail hp-building">
         <div class="caption">
           <h1><br /></h1>
-          <h1><br /></h1>
           <p><a href="/venues/2" class="btn btn-default" role="button">Building.co</a></p>
         </div>
       </div>
@@ -59,7 +133,6 @@
     <div class="col-lg-4 col-md-4 col-xs-12">
       <div class="thumbnail hp-p54">
         <div class="caption">
-          <h1><br /></h1>
           <h1><br /></h1>
           <p><a href="/venues/3" class="btn btn-default" role="button">Pacific54</a></p>
         </div>
@@ -71,6 +144,23 @@
     <div class="col-lg-3"> </div>
   </div>
 </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--   <div class="row" align="center">
+    <div class="col-lg-2 col-xs-2"> </div>
+    <div class="col-lg-4 col-xs-4"><h4>If You Are An Artist</h4></div>
+    <div class="col-lg-4 col-xs-4"><h4>If You Are In Need Of Art</h4></div>
+    <div class="col-lg-2 col-xs-2"> </div>
+  </div>
+  <div class="row" align="center">
+    <div class="col-lg-4 col-md-4 col-xs-12 bg-danger"> add icon <br><h3>Register as an Artist</h3></div>
+    <div class="col-lg-4 col-md-4 col-xs-12 bg-warning"> add icon <br><h3>Upload your Artwork</h3></div>
+    <div class="col-lg-4 col-md-4 col-xs-12 bg-success"> add icon <br><h3>Connect with Buyers</h3></div>
+  </div> --> 
+
   <div class="jumbotron bg-homepage-info" align="center">
     <div class="row" align="center">
         <div class="col-lg-2"> </div>
@@ -80,6 +170,7 @@
     <div class="row" align="center">
         <div class="col-lg-2"> </div>
         <div class="col-lg-8 col-xs-12 body-text hidden-xs">Conversely, when you sign up as a patron with Artbnb, you will have access to a wide range of artists who either have art they have already produced and are looking to rent or sell, or they are available to produce custom art pieces. Additionally, any business or property owners can register their venue on Artbnb to be contacted by artists who are interested in displaying their work for a small daily or weekly fee, but with no commission fees if their art is sold on-site.<br><br></div>
+        <div class="col-lg-8 col-xs-12 body-text hidden-xl hidden-lg hidden-md hidden-sm">Conversely, when you sign up as a patron with Artbnb, you will have access to a wide range of artists who have art to sell.<br><br></div>
         <div class="col-lg-2"> </div>
     </div>
     <div class="row" align="center">
