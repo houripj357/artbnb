@@ -6,6 +6,17 @@
 	color: rgb(230,146,248);
 }
 
+.artbnb-logo {
+	background-image: url(image-path('artbnb-logo.jpg'));
+    background-size: cover;
+    height: 50px; 
+    width: 50px; 
+    margin: 4px;
+    // margin-top: 50px;
+}
+
+
+
 a:link {
 	font-size: 24px;
 	color: rgb(230,146,248);
