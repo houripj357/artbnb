@@ -5,7 +5,8 @@
 <% @artworks.in_groups_of(3, false).each do |group| %>
   <div class='row'>
   	<center>
-    <% group.each do |artwork| %>
+    <%# group.each do |artwork| %>
+    <% group.sort { |a,b| b.likes(group).count <=> a.likes(group).count }.each do |artwork| %>
     <li>
       <div class='col-md-4'>
         <%= link_to image_tag(artwork.image.url(:medium)), artwork_path(artwork) %>
