@@ -13,6 +13,7 @@
       <div class='col-md-3'>
         <%= link_to image_tag(user.profile.url(:thumb)), user_path(user) %>
         <h3><%= user.name %></h3>
+        <h5><%= user.city %>, <%= user.country %></h5>
         <div><%= link_to "Message me", new_conversation_path(user) %></div><br />
         </li>
     <% end %>

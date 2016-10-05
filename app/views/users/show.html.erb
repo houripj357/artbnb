@@ -1,13 +1,30 @@
-<h2> Welcome to <%= @user.name %>'s profile page!</h2>
+<p><h2 align="center"> Welcome to <%= @user.name %>'s profile page!</h2></p>
+<hr />
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 center">
+		<p> <%= image_tag @user.profile.url(:thumb), class: "img-circle" %> 
+			<h5><%= @user.city %>, <%= @user.country %></h5>
+  		</p>
+	</div>
+</div>
+<hr />
+<br />
+<div>
+	<%= render 'artworks' %>
+</div>
+<hr />
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 center">
+		<% if @user == current_user %> 
+			<% %>
+		<% else %>
+			<p>Want to send <%= @user.name %> a message? </p>
+			<p><%= link_to "Click here", new_conversation_path(@user) %></p>
+			<hr />
+		<% end %>
 
-<p> <%= image_tag @user.profile.url(:thumb) %> <% @user.artworks.each do |artwork| %>
-  <li><%= image_tag artwork.image.url(:thumb) %> <br/> <%= link_to artwork.title, artworks_path(artwork) %></li><br />
-  <% end %> </p>
+		<p><%= link_to "See More Artists", users_path %></p>
 
-<% if @user == current_user %> 
-	<% %>
-<% else %>
-	<p>Want to send <%= @user.name %> a message? <%= link_to "Click here", new_conversation_path(@user) %>.</p>
-<% end %>
-
-<p><%= link_to "See More Artists", users_path %></p>
+		<hr />
+	</div>
+</div>

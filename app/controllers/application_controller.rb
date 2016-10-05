@@ -13,7 +13,7 @@ private
 
 protected 
 	def configure_permitted_parameters
-		devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile, :role]) 
-		devise_parameter_sanitizer.permit(:account_update, keys: [:name, :profile, :role] )
+		devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile, :city, :country, :role]) 
+		devise_parameter_sanitizer.permit(:account_update, keys: [:name, :profile, :city, :country,:role] )
 	end
 end

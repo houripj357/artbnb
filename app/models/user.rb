@@ -2,11 +2,11 @@ class User < ApplicationRecord
 	has_many :artworks 
 	has_many :venues 
 
-	enum role: [:patron, :artist, :admin]
+	enum role: [:admin, :artist, :venue_owner, :collector, :private_dealer, :educator, :art_student, :media]
 	after_initialize :set_default_role, :if => :new_record?
 
 	def set_default_role 
-		self.role ||= :patron
+		self.role ||= :artist
 	end
 
 	has_and_belongs_to_many :roles

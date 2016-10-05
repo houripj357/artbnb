@@ -1,0 +1,21 @@
+<ul>
+<% @user.artworks.in_groups_of(3, false).each do |group| %>
+  <div class='row'>
+  	<center>
+    <% group.each do |artwork| %>
+    <li>
+      <div class='col-md-4'>
+        <%= link_to image_tag(artwork.image.url(:medium)), artwork_path(artwork) %>
+        <h4><%= artwork.title %></h4>
+		    <h6>Likes: <%= artwork.likes.count %>
+				<% artwork.likes.each do |like| %>
+				    <%= image_tag like.user.profile.url, width: 20 %>
+			   	<% end %>
+		    </h6>
+      </div>
+      </li>
+    <% end %>
+	</center>	
+  </div>
+<% end %>
+</ul>

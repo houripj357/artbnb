@@ -12,9 +12,9 @@
     <li>
 <div class='col-md-4'>
   <%= link_to image_tag(venue.image.url(:medium)), venue_path(venue) %>
-    <h4><%= venue.name %></h4>
-    <h6><%= venue.address %></h6>
-    <%= link_to "Message venue owner", new_conversation_path(@user) %><br />
+    <h3><%= venue.name %></h3>
+    <h4><%= venue.city %>, <%= venue.country %></h4>
+    <%= link_to "Message venue owner", new_conversation_path(@user) %><br /><br />
         </li>
     <% end %>
 </center>
@@ -25,7 +25,7 @@
 <hr />
 <div class="row" align="center">
 <p>
-  <% if user_signed_in? && current_user.patron? %> 
+  <% if user_signed_in? && current_user.venue_owner? %> 
     <%= link_to "Register your venue!", new_venue_path %>
     <hr />
   <% else %>

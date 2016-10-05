@@ -1,7 +1,15 @@
 <h2> <%= @venue.name %> </h2>
 <p> <%= image_tag @venue.image.url(:medium) %> </p>
 <p> <%= @venue.description %> </p>
-<p> <%= @venue.address %> </p>
+<p> <%= @venue.city %>, <%= @venue.country %></p>
 <p> <%= @venue.phone_number %> </p>
 <p><i> contact the owner of this venue > must add this functionality. also, must center the image, then add owner's profile image to the left of the venue details. with a contact button under the image</i></p>
-<p><%= link_to "Edit Venue", edit_venue_path(@venue) %> | <%= link_to "See More Venues", venues_path %></p>
+<p>
+  <% if user_signed_in? && current_user.venue_owner? %> 
+    <%= link_to "Edit Venue", edit_venue_path(@venue) %> | <%= link_to "See More Venues", venues_path %>
+    <hr />
+  <% else %>
+    <%= link_to "See More Venues", venues_path %>
+    <hr />
+  <% end %>
+</p>

@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920030506) do
+ActiveRecord::Schema.define(version: 20161005064257) do
 
   create_table "artworks", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.time     "created_at"
-    t.time     "updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 20160920030506) do
     t.integer  "profile_file_size"
     t.datetime "profile_updated_at"
     t.integer  "role"
+    t.text     "city"
+    t.text     "country"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -110,15 +112,20 @@ ActiveRecord::Schema.define(version: 20160920030506) do
   create_table "venues", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.text     "address"
     t.text     "phone_number"
-    t.time     "created_at"
-    t.time     "updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.text     "street"
+    t.text     "street_cont"
+    t.text     "city"
+    t.text     "state"
+    t.text     "country"
+    t.text     "zip"
   end
 
 end

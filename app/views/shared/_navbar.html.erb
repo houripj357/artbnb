@@ -46,7 +46,8 @@
           <%= link_to "View Profile", user_path(current_user) %>
         <% if current_user.artist? %> 
           <%= link_to "Upload Your Art", new_artwork_path %>
-        <% else %>
+        <% end %>
+        <% if current_user.venue_owner? %>
           <%= link_to "Register Your Venue", new_venue_path %>
         <% end %>
           <%= link_to "Edit Account", edit_user_registration_path(current_user) %>
