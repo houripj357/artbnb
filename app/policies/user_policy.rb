@@ -26,6 +26,14 @@ class UserPolicy < ApplicationPolicy
 		true
 	end
 
+	def my_friends?
+		true
+	end
+
+	def add_friend?
+		true
+	end
+
 	def destroy? 
 		@current_user.admin?
 	end

@@ -20,13 +20,16 @@ Rails.application.routes.draw do
 			get :trash 
 		end
 	end
-
-	get 'search_friends', to: "users#search"
+	resources :friendships
 
 	# match 'auth/:provider/callback', to: 'sessions#create'
 	
 	get "artworks" => 'artworks#index'
 	get "venues" => 'venues#index'
 
-	get "friends" => "users#my_friends"
+	get "my_friends", to: 'users#my_friends'
+	get 'search_friends', to: "users#search"
+	post 'add_friend', to: "users#add_friend" 
+
+
 end

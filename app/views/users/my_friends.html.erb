@@ -1,1 +1,57 @@
-<h1>add friends!</h1>
+	<div class="row">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<% if @friendships.size > 0 %> 
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th colspan="8" class="page-header">
+								<h1><%= current_user.name %>'s Friends</h1>
+								<hr />
+							</th>
+						</tr>
+						<tr>
+							<th><h2> </h2></th>
+							<th><h2>Name</h2></th>
+							<th><h2>Email</h2></th>
+							<th><h2>Actions</h2></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @friendships.each do |friend| %>
+							<tr>
+								<td><%= image_tag friend.profile.url(:thumb) %></td>
+								<td><h3><%= friend.name %></h3></td>
+								<td><h3><%= friend.email %></h3></td>
+								<td class="hidden-md hidden-sm hidden-xs">
+									<%= link_to "View Profile", 
+										user_path(friend), 
+										class: "btn green-button btx-xs" %>
+									<%= link_to 'Remove Friend',
+										friendship_path(friend),
+										:method => :delete,
+										:data => { :confirm => 'Are you sure?' },
+										:class => 'btn green-button btx-xs' %>
+								</td>
+								<td class="hidden-xl hidden-lg">
+									<%= link_to "View Profile", 
+										user_path(friend), 
+										class: "btn green-button btx-xs" %>
+								</td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+			<% else %> 
+				<div class= "row col-lg-12">
+					<p class= "lead">You don't have any friends yet. Please add some!</p>
+				</div>
+			<% end %>
+		</div> 
+	</div>
+<hr />
+<div class="row">
+	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+	<%= render 'friends/lookup' %>
+	</div> 
+</div>
+<hr />

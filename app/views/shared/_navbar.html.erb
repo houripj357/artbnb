@@ -44,6 +44,7 @@
             <li>
           <%= link_to "Inbox", conversations_path %>    
           <%= link_to "View Profile", user_path(current_user) %>
+          <%= link_to "My Friends", my_friends_path %>
         <% if current_user.artist? %> 
           <%= link_to "Upload Your Art", new_artwork_path %>
         <% end %>
