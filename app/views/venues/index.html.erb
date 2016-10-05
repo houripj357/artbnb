@@ -14,7 +14,7 @@
   <%= link_to image_tag(venue.image.url(:medium)), venue_path(venue) %>
     <h3><%= venue.name %></h3>
     <h4><%= venue.city %>, <%= venue.country %></h4>
-    <%= link_to "Message venue owner", new_conversation_path(@user) %><br /><br />
+    <%= link_to "Contact venue owner", new_conversation_path(@user) %><br /><br />
         </li>
     <% end %>
 </center>

@@ -1,63 +1,75 @@
 <div class="container">
 
   <div class="row" align="center">
-    <div class="bg-registration col-lg-12 ">
-      <h2>Sign Up For Artbnb!</h2>
+    <div class="bg-registration col-lg-12">
+      <h1 class="green-text padding">Sign Up For Artbnb!</h1>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="field">
-          <%= f.label :name %><br />
-          <%= f.text_field :name, autofocus: true %>
-        </div>
-
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email %>
-        </div>
-
-        <div class="field">
-          <%= f.label :city %><br />
-          <%= f.text_field :city %>
-        </div>
-
-        <div class="field">
-          <%= f.label :country %><br />
-          <%= f.text_field :country %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :select_one %>
-          <%= f.select(:role, [['Artist', 'artist'], ['Venue Owner', 'venue_owner'], ['Collector', 'collector'], ['Private Dealer', 'private_dealer'], ['Educator', 'educator'], ['Art Student', 'art_student'], ['Media', 'media']]) %>
-        </div>
-
-        <div class="field">
-          <%= f.label :upload_a_profile_image %><br />
-          <%= f.file_field :profile %>
-        </div>
-
         <div><br /></div>
 
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
+        <div class= "form-group padding">
+          <div class="col-sm-6" align="center">
+            <%= f.text_field :name, class: "form-control", placeholder: "What's your name?", autofocus: true %>
+          </div>
+         
+          <div class="col-sm-6">
+            <%= f.text_field :email, class: "form-control", placeholder: "Enter your email address" %>
+          </div>
+         </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
+         <div><br /></div>
 
-        <div><br /></div>
+         <div class= "form-group padding">
+          <div class="col-sm-6">
+            <%= f.text_field :city, class: "form-control", placeholder: "What city do you live in?" %>
+          </div>
+         
+          <div class="col-sm-6">
+            <%= f.text_field :country, class: "form-control", placeholder: "What country is that in?" %>
+          </div>
+         </div>
 
-        <div class="actions">
-          <%= f.submit "Sign up" %>
-        </div>
-      <% end %>
+         <div><br /></div>
+
+          <div class= "form-group ">
+            <div class="col-sm-4">
+              <%= f.label :i_am_a %>:
+              <%= f.select(:role, [['Artist', 'artist'], ['Venue Owner', 'venue_owner'], ['Collector', 'collector'], ['Private Dealer', 'private_dealer'], ['Educator', 'educator'], ['Art Student', 'art_student'], ['Media', 'media']]) %>
+            </div>
+            <div class="control-label col-sm-4">
+              <%= f.label :want_to_upload_a_profile_image %>?   >>>
+            </div>
+            <div class="col-sm-4">
+              <%= f.file_field :profile %>
+            </div>
+         </div>
+
+          <div><br /></div>
+
+        <div class= "form-group padding">
+          <div class="col-sm-6">
+<!--             <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+            <br /> -->
+            <%= f.password_field :password, class: "form-control", placeholder: "password (6 characters minimum)", autocomplete: "off" %>
+          </div>
+         
+          <div class="col-sm-6">
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "confirm password", autocomplete: "off" %>
+          </div>
+         </div>
+
+          <div><br /></div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <%= f.submit "Sign Up", class: 'btn green-button btn-lg' %>
+            </div>
+          </div>
+        <% end %>
     </div>
 
     <div class="bg-green-banner padding col-lg-12">
@@ -67,5 +79,3 @@
 
   </div>
 </div>
-<div>
-  </div>
