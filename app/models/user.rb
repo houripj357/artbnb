@@ -34,4 +34,8 @@ class User < ApplicationRecord
       return !!self.roles.find_by_name(role.to_s.camelize)
   	end
 
+  	def self.matches(field_name, param)
+           where("lower(#{field_name}) like ?", "%#{param}%")
+    end
+
 end

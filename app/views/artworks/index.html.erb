@@ -2,8 +2,12 @@
 <hr />
 <p>
 <ul>
+
 <% @artworks.in_groups_of(3, false).each do |group| %>
   <div class='row'>
+    <div align="center">
+      <%= will_paginate %>
+    </div>
   	<center>
     <% group.each do |artwork| %>
     <li>
@@ -19,6 +23,9 @@
         <%= link_to "Message this artist!", new_conversation_path(@user) %>
       </li>
     <% end %>
+<!--   <div align="center">
+    <%= will_paginate %>
+  </div> -->
 	</center>
   <br />
   </div>

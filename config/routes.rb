@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 		end
 	end
 
+	get 'search_friends', to: "users#search"
+
 	# match 'auth/:provider/callback', to: 'sessions#create'
 	
 	get "artworks" => 'artworks#index'

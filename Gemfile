@@ -9,6 +9,8 @@ gem 'mailboxer'
 gem 'mini_magick'
 gem 'omniauth-facebook'
 gem 'aws-sdk'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

@@ -41,7 +41,7 @@ class ArtworksController < ApplicationController
 	end
 
 	def index
-		@artworks = Artwork.all
+		@artworks = Artwork.paginate(page: params[:page], per_page: 9)
 		authorize User
 	end
 
