@@ -15,9 +15,13 @@
 <hr />
 <div class="row">
 	<div class="col-md-4 col-md-offset-4 center">
-		<% if @user == current_user %> 
+		<% if current_user.artist? && @user == current_user %> 
 			<%= link_to "Upload more of your artwork!", new_artwork_path %>
 			<hr />
+		<% end %>
+
+		<% if @user == current_user %>
+			<% %>
 		<% else %>
 			<p>Want to send <%= @user.name %> a message? </p>
 			<p><%= link_to "Click here", new_conversation_path(@user) %></p>

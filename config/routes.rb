@@ -28,4 +28,5 @@ Rails.application.routes.draw do
 	get "artworks" => 'artworks#index'
 	get "venues" => 'venues#index'
 
+	get "friends" => "users#my_friends"
 end
