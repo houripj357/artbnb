@@ -42,7 +42,7 @@ class VenuesController < ApplicationController
 	end
 
 	def index
-		@venues = Venue.paginate(page: params[:page], per_page: 9)
+		@venues = Venue.paginate(page: params[:page], per_page: 6)
 		authorize User
 	end
 

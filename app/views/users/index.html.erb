@@ -4,9 +4,6 @@
 <ul>
 <% @users.where("role = 1").in_groups_of(4, false).each do |group| %>
   <div class='row'>
-    <div align="center">
-      <%= will_paginate %>
-    </div>
   	<center>
     <% group.each do |user| %>
     <li>
@@ -20,6 +17,9 @@
 	</center>
   </div>
 <% end %>
+<div align="center">
+  <%= will_paginate %>
+</div>
 </ul>
 </p>
 <hr />
