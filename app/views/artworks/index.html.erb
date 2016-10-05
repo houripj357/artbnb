@@ -34,6 +34,7 @@
 </ul>
 </p>
 <hr />
+<div class="row" align="center">
 <p>
   <% if user_signed_in? && current_user.artist? %> 
     <%= link_to "Upload your art!", new_artwork_path %>
@@ -42,3 +43,4 @@
     <% %>
   <% end %>
 </p>
+</div>

@@ -4,12 +4,15 @@
 <ul>
 <% @users.where("role = 1").in_groups_of(4, false).each do |group| %>
   <div class='row'>
+    <div align="center">
+      <%= will_paginate %>
+    </div>
   	<center>
     <% group.each do |user| %>
     <li>
       <div class='col-md-3'>
-        <%= image_tag(user.profile.url(:thumb)) %>
-        <h3><%= link_to user.name, user_path(user) %></h3>
+        <%= link_to image_tag(user.profile.url(:thumb)), user_path(user) %>
+        <h3><%= user.name %></h3>
         <div><%= link_to "Message me", new_conversation_path(user) %></div><br />
         </li>
     <% end %>
@@ -19,7 +22,9 @@
 </ul>
 </p>
 <hr />
+<div class="row" align="center">
 <p>
-<%= link_to "Home", root_path %>
+<%= link_to "Send New Message", new_conversation_path %>
 </p>
 <hr />
+</div>
