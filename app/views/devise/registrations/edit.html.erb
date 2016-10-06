@@ -7,7 +7,27 @@
 <%= image_tag @user.profile.url(:thumb) %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
-  <%= devise_error_messages! %>
+  <% if @user.errors.any? %>
+          <div class="row">
+              <div class="col-xs-8 col-xs-offset-2">
+                <div class="panel panel-danger">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">
+                      <%= pluralize(@user.errors.count, "error") %>
+                      prohibited your account from being created
+                    </h3>
+                    <div class="panel-body">
+                      <ul>
+                        <% @user.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
 
   <div class="field">
     <%= f.label :want_to_update_your_profile_image? %><br />

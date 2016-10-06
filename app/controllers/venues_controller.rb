@@ -12,7 +12,7 @@ class VenuesController < ApplicationController
 		@venue.user = current_user
 		authorize User
 		if @venue.save
-			flash[:notice] = "Venue was successfully registered"
+			flash[:success] = "Venue was successfully registered"
 			redirect_to venue_path(@venue)
 		else
 			render 'new'
@@ -29,7 +29,7 @@ class VenuesController < ApplicationController
 		authorize User
 		raise "not authorized" unless UserPolicy.new(current_user, @venue).update?
 		if @venue.update(venue_params)
-			flash[:notice] = "Venue details were successfully updated"
+			flash[:success] = "Venue details were successfully updated"
 			redirect_to venue_path(@venue)
 		else
 			render 'edit'
@@ -50,7 +50,7 @@ class VenuesController < ApplicationController
 		@venue = Venue.find(params[:id])
 		authorize User
 		@venue.destroy
-		flash[:notice] = "Venue was successfully deleted"
+		flash[:danger] = "Venue was successfully deleted"
 		redirect_to venues_path
 	end
 

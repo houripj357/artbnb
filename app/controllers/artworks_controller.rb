@@ -12,7 +12,7 @@ class ArtworksController < ApplicationController
 		@artwork.user = current_user
 		authorize User
 		if @artwork.save
-			flash[:notice] = "Artwork was successfully uploaded"
+			flash[:success] = "Artwork was successfully uploaded"
 			redirect_to artwork_path(@artwork)
 		else
 			render 'new'
@@ -28,7 +28,7 @@ class ArtworksController < ApplicationController
 		@artwork = Artwork.find(params[:id])
 		authorize User
 		if @artwork.update(artwork_params)
-			flash[:notice] = "Artwork was successfully updated"
+			flash[:success] = "Artwork was successfully updated"
 			redirect_to artwork_path(@artwork)
 		else
 			render 'edit'
@@ -49,7 +49,7 @@ class ArtworksController < ApplicationController
 		@artwork = Artwork.find(params[:id])
 		authorize User
 		@artwork.destroy
-		flash[:notice] = "Artwork was successfully deleted"
+		flash[:danger] = "Artwork was successfully deleted"
 		redirect_to artworks_path
 	end
 

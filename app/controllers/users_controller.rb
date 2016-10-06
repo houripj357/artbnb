@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     	authorize User
   	end
 
+
     def my_friends
         @friendships = current_user.friends
         authorize User
