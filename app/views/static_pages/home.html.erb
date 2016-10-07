@@ -43,77 +43,30 @@
       <div class="tab-content">
         <div class="tab-pane fade in active" id="Artist">
           <div class="container" align="center">
-            <div class="col-lg-4 col-md-4 col-xs-4">
+            <div class="col-lg-3 col-md-3 col-xs-3">
               <div class="hp-icon-how-1 img-responsive img-thumbnail img-circle logo"> </div>
               <h4>Register As An Artist</h4>
               <p class="hidden-xs">Complete the sign up form to create an account with Artbnb. </p>
             </div>
-            <div class="col-lg-4 col-md-4 col-xs-4">
+            <div class="col-lg-3 col-md-3 col-xs-3">
+              <div class="hp-icon-artists-alt img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Connect With Stripe</h4>
+              <p class="hidden-xs">Instantly create an account with Stripe or easily connect an existing one. </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-3">
               <div class="hp-icon-artists-2 img-responsive img-thumbnail img-circle logo"> </div>
-              <h4>Upload your Artwork</h4>
+              <h4>Upload Your Artwork</h4>
               <p class="hidden-xs">Submit an image and details of your artwork and set a price. </p>
             </div>
-            <div class="col-lg-4 col-md-4 col-xs-4">
+            <div class="col-lg-3 col-md-3 col-xs-3">
               <div class="hp-icon-artists-3 img-responsive img-thumbnail img-circle logo"> </div>
-              <h4>Connect With Patrons</h4>
-              <p class="hidden-xs">Connect with local patrons to market your art and services. </p>
+              <h4>Find A Venue</h4>
+              <p class="hidden-xs">Connect with local patrons to show your art in their business for a fee. </p>
             </div>
           </div>
-            <div class="container-fluid hidden-sm hidden-xs">
-  <div class="row bg-green-banner" align="center">
-    <h2 class="padding">Artworks</h2>
-    <div class="col-lg-4 col-md-4 col-xs-12">
-      <div class="thumbnail hp-harumi-abe">
-        <div class="caption">
-          <h1><br /></h1>
-          <p><a href="/artworks/6" class="btn btn-default" role="button">In The Meadow</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-12">
-      <div class="thumbnail hp-john-hoon">
-        <div class="caption">
-          <h1><br /></h1>
-          <p><a href="/artworks/3" class="btn btn-default" role="button">This Is Art</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-12">
-      <div class="thumbnail hp-food-artbnb">
-        <div class="caption">
-          <h1><br /></h1>
-          <p><a href="/artworks/5" class="btn btn-default" role="button">F.O.O.D.</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3"> </div>
-    <div class="col-lg-3 col-xs-12"><%= button_to "See more Artwork!", artworks_path, :class => "btn btn-warning btn-lg purple-button", :method => :get %></div>
-    <div class="col-lg-3 col-xs-12 hidden-md hidden-sm hidden-xs"><%= button_to "Upload Your Artwork!", new_artwork_path, :class => "btn btn-warning btn-lg purple-button", :method => :get %></div>
-    <div class="col-lg-3"> </div>
-  </div>
-</div>
-        </div>
-        <div class="tab-pane fade" id="Patron">
-          <div class="container" align="center">
-            <div class="col-lg-4 col-md-4 col-xs-4">
-              <div class="hp-icon-how-1 img-responsive img-thumbnail img-circle logo"> </div>
-              <h4>Register As A Patron</h4>
-              <p class="hidden-xs">Complete the sign up form to create an account with Artbnb. </p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-4">
-              <div class="hp-icon-patrons-2 img-responsive img-thumbnail img-circle logo"> </div>
-              <h4>Browse Gallery</h4>
-              <p class="hidden-xs">Click on “View Gallery” to browse artworks and like your favs. </p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-4">
-              <div class="hp-icon-patrons-3 img-responsive img-thumbnail img-circle logo"> </div>
-              <h4>Buy Artwork</h4>
-              <p class="hidden-xs">Connect with local artists to buy art in support of your community.</p>
-            </div>
-          </div>
-            <div class="container-fluid hidden-sm hidden-xs">
-  <div class="row bg-green-banner" align="center">
-    <h2 class="padding">Venues</h2>
+          <div class="container-fluid hidden-sm hidden-xs">
+            <div class="row bg-green-banner" align="center">
+              <h2 class="padding">Venues</h2>
     <div class="col-lg-4 col-md-4 col-xs-12">
       <div class="thumbnail hp-beaker-and-gray">
         <div class="caption">
@@ -139,8 +92,58 @@
       </div>
     </div>
     <div class="col-lg-3"> </div>
-    <div class="col-lg-3 col-xs-12"><%= button_to "See more Venues!", venues_path, :class => "btn btn-warning btn-lg purple-button", :method => :get %></div>
-    <div class="col-lg-3 col-xs-12 hidden-md hidden-sm hidden-xs"><%= button_to "Register your Venue!", new_venue_path, :class => "btn btn-warning btn-lg purple-button", :method => :get %></div>
+    <div class="col-lg-12 col-xs-12"><%= button_to "See more Venues!", venues_path, :class => "btn btn-warning btn-lg purple-button", :method => :get %></div>
+              <div class="col-lg-3"> </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="Patron">
+          <div class="container" align="center">
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-how-1 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Register As A Patron</h4>
+              <p class="hidden-xs">Complete the sign up form to create an account with Artbnb. </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-patrons-2 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Browse Gallery</h4>
+              <p class="hidden-xs">Click on “View Gallery” to browse artworks and like your favs. </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4">
+              <div class="hp-icon-patrons-3 img-responsive img-thumbnail img-circle logo"> </div>
+              <h4>Buy Artwork</h4>
+              <p class="hidden-xs">Connect with local artists to buy art in support of your community.</p>
+            </div>
+          </div>
+            <div class="container-fluid hidden-sm hidden-xs">
+  <div class="row bg-green-banner" align="center">
+    <h2 class="padding">Artworks</h2>
+              <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="thumbnail hp-harumi-abe">
+                  <div class="caption">
+                    <h1><br /></h1>
+                    <p><a href="/artworks/6" class="btn btn-default" role="button">In The Meadow</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="thumbnail hp-john-hoon">
+                  <div class="caption">
+                    <h1><br /></h1>
+                    <p><a href="/artworks/3" class="btn btn-default" role="button">This Is Art</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="thumbnail hp-food-artbnb">
+                  <div class="caption">
+                    <h1><br /></h1>
+                    <p><a href="/artworks/5" class="btn btn-default" role="button">F.O.O.D.</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3"> </div>
+              <div class="col-lg-12 col-xs-12"><%= button_to "See More Artwork!", artworks_path, :class => "btn btn-warning btn-lg purple-button", :method => :get %></div>
     <div class="col-lg-3"> </div>
   </div>
 </div>

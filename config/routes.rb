@@ -31,5 +31,7 @@ Rails.application.routes.draw do
 	get 'search_friends', to: "users#search"
 	post 'add_friend', to: "users#add_friend" 
 
+	get "thanks", to: "users#thanks"
+	get "stripe", to: "users#stripe"
 
 end

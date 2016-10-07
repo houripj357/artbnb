@@ -34,6 +34,14 @@ class UserPolicy < ApplicationPolicy
 		true
 	end
 
+	def thanks?
+		true
+	end
+
+	def stripe?
+		true
+	end
+
 	def destroy? 
 		@current_user.admin?
 	end

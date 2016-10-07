@@ -1,0 +1,33 @@
+<html>
+<head>
+<script type="text/javascript">
+function delayedRedirect(){
+    window.location = "/artworks"
+}
+</script>
+</head>
+<body onLoad="setTimeout('delayedRedirect()', 5000)">
+<div class="container">
+
+  <div class="row" align="center">
+    <div class="bg-sign-in col-lg-12 ">
+
+      <h2 class="green-text">Thank you for supporting a local artist!</h2>
+      <h3 class="green-text">Now, KEEP SHOPPING!</h3>
+
+    </div>
+
+    <div class="bg-green-banner padding col-lg-12">
+      <h4>
+      	<p>You should be redirected after 5 seconds.....</p>
+      	<p>Are you still here?</p>
+      	<p><%= link_to "Click here to view more artwork.", artworks_path %></p>
+      </h4>
+    </div>
+
+  </div>
+</div>
+<div>
+</div>
+</body>
+</html>

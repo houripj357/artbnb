@@ -40,6 +40,12 @@ class ArtworksController < ApplicationController
 		authorize User
 	end
 
+	def payment 
+        @artwork = Artwork.find(params[:id])
+        @artwork.user = current_user
+        authorize User
+    end
+
 	def index
 		@artworks = Artwork.paginate(page: params[:page], per_page: 12)
 		authorize User
@@ -55,7 +61,7 @@ class ArtworksController < ApplicationController
 
 private 
 	def artwork_params
-		params.require(:artwork).permit(:title, :description, :image)
+		params.require(:artwork).permit(:title, :description, :image, :price)
 	end
 
 end

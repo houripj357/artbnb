@@ -24,6 +24,10 @@ class ArtworkPolicy < ApplicationPolicy
 		true 
 	end
 
+	def payment?
+		true
+	end
+
 	def show?
 		true 
 	end

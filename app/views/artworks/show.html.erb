@@ -1,15 +1,19 @@
-<p><h3> <%= @artwork.title %>, <%= link_to @artwork.user.name, user_path(@artwork.user) %> </h3></p>
+<p><h3> <%= @artwork.title %>, <%= link_to @artwork.user.name, user_path(@artwork.user) %> | Price: <%= number_to_currency(@artwork.price) %> </h3></p>
 <hr />
 <p> <%= image_tag @artwork.image.url(:large) %> </p>
-<p> <%= @artwork.description %> </p>
-<p><%= link_to "Edit Artwork", edit_artwork_path(@artwork) %> | <%= link_to "See More Artwork", artworks_path %></p>
-
-<div id="artwork_<%= @artwork.id %>_likes">
-  <%= render partial: "likes", locals: {artwork: @artwork} %>
-</div>
-<hr />
+<p>Description: <%= @artwork.description %> </p>
+<p>
+  <% if @artwork.user.name? == current_user.name %> 
+    <%= link_to "Edit Artwork", edit_artwork_path(@artwork) %> | <%= link_to "See More Artwork", artworks_path %>
+    <hr />
+  <% else %>
+    <%= render 'payment' %>
+    <%= link_to "Message this artist!", new_conversation_path(@user) %> | <%= link_to "See More Artwork", artworks_path %>
+    <div id="artwork_<%= @artwork.id %>_likes">
+      <%= render partial: "likes", locals: {artwork: @artwork} %>
+    </div>
+    <hr />
+  <% end %>
 </p>
-<div>    
-	<%= link_to "Message this artist!", new_conversation_path(@user) %>
-</div>
-<hr />
+
+

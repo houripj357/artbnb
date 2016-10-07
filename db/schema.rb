@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005190218) do
+ActiveRecord::Schema.define(version: 20161007032240) do
 
   create_table "artworks", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161005190218) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.decimal  "price"
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -91,6 +92,14 @@ ActiveRecord::Schema.define(version: 20161005190218) do
     t.string   "message_id"
     t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.string   "email"
+    t.string   "token"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

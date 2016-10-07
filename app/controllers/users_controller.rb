@@ -12,6 +12,21 @@ class UsersController < ApplicationController
     	authorize User
   	end
 
+    def update
+        @user = User.find(params[:id])
+        redirect_to thanks_path
+        authorize User
+    end
+
+    def thanks
+        @user = current_user
+        authorize User
+    end
+
+    def stripe
+        @user = current_user
+        authorize User
+    end
 
     def my_friends
         @friendships = current_user.friends
@@ -31,13 +46,13 @@ class UsersController < ApplicationController
     end
 
     def add_friend
-    @friend = User.find(params[:friend])
-        current_user.friendships.build(friend_id: @friend.id)
-            if current_user.save
-                redirect_to my_friends_path, notice: "Friend was successfully added."
-            else
-                redirect_to my_friends_path, flash[:error] = "There was an error with adding user as friend."
-            end
+        @friend = User.find(params[:friend])
+            current_user.friendships.build(friend_id: @friend.id)
+                if current_user.save
+                    redirect_to my_friends_path, notice: "Friend was successfully added."
+                else
+                    redirect_to my_friends_path, flash[:error] = "There was an error with adding user as friend."
+                end
         authorize User
     end
 end
