@@ -35,6 +35,10 @@ class ConversationsController < ApplicationController
 			true, 
 			params[:attachment],
 			)
+		# @conversation = Conversation.new
+		# (@conversation.users.uniq - [current_user]).each do |user|
+        	# Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @message)
+      	# end
 		redirect_to all_conversations_path
 	end
 

@@ -5,6 +5,9 @@ class User < ApplicationRecord
 	has_many :friendships
 	has_many :friends, :through => :friendships
 
+    has_many :conversations
+    has_many :notifications, foreign_key: :recipient_id
+
 	enum role: [:admin, :artist, :venue_owner, :collector, :private_dealer, :educator, :art_student, :media]
 	after_initialize :set_default_role, :if => :new_record?
 
