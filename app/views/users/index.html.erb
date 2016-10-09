@@ -1,5 +1,7 @@
 <p><center><h1>All artists</h1></center></p>
 <hr />
+  <%= render 'search' %>
+<hr />
 <p>
 <ul>
 <% @users.where("role = 1").in_groups_of(4, false).each do |group| %>
