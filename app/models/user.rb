@@ -31,6 +31,7 @@ class User < ApplicationRecord
 	# validates_attachment_content_type :profile, :content_type => ["jpg", "jpeg", "png", "gif"]
 
 	has_many :likes
+    has_many :liked_artworks, :through => :likes, :source => :artwork
 
 	def likes?(artwork)
 		artwork.likes.where(user_id: id).any?
@@ -61,6 +62,14 @@ class User < ApplicationRecord
 
     def self.email_matches(param)
     	matches('email', param)
+    end
+
+    def self.name_matches(param)
+        matches('city', param)
+    end
+
+    def self.name_matches(param)
+        matches('country', param)
     end
 
     def self.matches(field_name, param)

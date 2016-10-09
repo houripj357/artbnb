@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'news/index'
+
 	devise_for :users
 
 	root to: "static_pages#home"
@@ -33,5 +35,7 @@ Rails.application.routes.draw do
 
 	get "thanks", to: "users#thanks"
 	get "stripe", to: "users#stripe"
+
+	get "news", to: 'news#index'
 
 end

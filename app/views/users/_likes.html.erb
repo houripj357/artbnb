@@ -1,0 +1,36 @@
+<div class='col-lg-12 center padding'>
+  <% if @user == current_user %>
+  <p><h4 align="center"> Your favorite pieces of art: </h4></p>
+<% else %>
+  <p><h4 align="center"> <%= @user.name %>'s favorite pieces of art:</h4></p>
+<% end %>
+</div>
+<% if @user.likes.size > 0 %>
+<ul>
+<% @user.likes.in_groups_of(3, false).each do |group| %>
+  <div class='row col-lg-12'>
+    <center>
+    <% group.each do |like| %>
+    <li>
+      <div class='col-md-4'>
+        <%#= image_tag like.artwork.image.url(:medium) %>
+        <%= like.artwork_id %>
+      </div>
+      </li>
+    <% end %>
+  </center> 
+  <hr />
+  </div>
+<% end %>
+</ul>
+<div class= "row col-lg-12 center"><p><%= link_to "Browse Gallery", artworks_path %></p></div>
+<% else %>
+<div class= "row col-lg-12 center">
+  <% if @user == current_user %>
+    <p class= "lead">You haven't liked any artwork yet!</p>
+  <% else %>
+    <p class= "lead"><%= @user.name %> hasn't liked any artwork yet!</p>
+  <% end %>
+  <hr />
+</div>
+<% end %>

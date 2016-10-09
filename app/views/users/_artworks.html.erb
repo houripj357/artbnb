@@ -1,10 +1,18 @@
+<div class='col-lg-12 center padding'>
+  <% if @user == current_user %>
+  <p><h4 align="center"> Your gallery:</h4></p>
+<% else %>
+  <p><h4 align="center"> <%= @user.name %>'s gallery:</h4></p>
+<% end %>
+</div>
+<div class='col-lg-12'>
 <ul>
 <% @user.artworks.in_groups_of(3, false).each do |group| %>
   <div class='row'>
   	<center>
     <% group.each do |artwork| %>
     <li>
-      <div class='col-md-4'>
+      <div class='col-lg-4 col-md-4 col-sm-4'>
         <%= link_to image_tag(artwork.image.url(:medium)), artwork_path(artwork) %>
         <h4><%= artwork.title %></h4>
 		    <h6>Likes: <%= artwork.likes.count %>
@@ -16,7 +24,11 @@
       </div>
       </li>
     <% end %>
+
 	</center>	
   </div>
 <% end %>
+<br />
 </ul>
+<hr />
+</div>
