@@ -10,11 +10,13 @@
     <li>
       <div class='col-md-4'>
         <%= link_to image_tag(artwork.image.url(:medium)), artwork_path(artwork) %>
-        <h4><%= artwork.title %> | <%= number_to_currency(artwork.price) %></h4>
-        <h4><%= artwork.user.name %>, Likes: <%= artwork.likes.count %>
+        <h4><%= artwork.title %> | <%= artwork.user.name %></h4>
+        <h4><%= number_to_currency(artwork.price) %></h4>
+		    <p>Likes: <%= artwork.likes.count %>
 				  <% artwork.likes.each do |like| %>
+				    <%= image_tag like.user.profile.url, width: 20 %>
 			   <% end %>
-		    </h4>
+		    </p>
         <%= link_to "Buy this piece!", artwork_path(artwork) %>
         </div>
       </li>
