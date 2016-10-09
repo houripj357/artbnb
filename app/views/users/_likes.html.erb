@@ -1,9 +1,10 @@
-<div class='col-lg-12 center padding'>
+<div class='col-lg-12 center padding green-text'>
   <% if @user == current_user %>
-  <p><h4 align="center"> Your favorite pieces of art: </h4></p>
+  <p class="green-text"><h2 align="center"> Your favorite pieces of art: </h2></p>
 <% else %>
-  <p><h4 align="center"> <%= @user.name %>'s favorite pieces of art:</h4></p>
+  <p><h2 align="green-text center"> <%= @user.name %>'s favorite pieces of art:</h2></p>
 <% end %>
+
 </div>
 <div class='col-lg-12 center '>
   <div class='col-lg-12 center padding'>
@@ -26,8 +27,7 @@
     <% end %>
     <br />
   </center> 
-  <br />
-  <hr />
+
   </div>
 <% end %>
 </ul>
@@ -35,7 +35,6 @@
 <div>
 <br />
 </div>
-<div class= "row col-lg-12 center"><p><%= link_to "Browse Gallery", artworks_path %></p></div>
 <% else %>
 <div class= "row col-lg-12 center">
   <% if @user == current_user %>
@@ -43,7 +42,7 @@
   <% else %>
     <p class= "lead"><%= @user.name %> hasn't liked any artwork yet!</p>
   <% end %>
-  <hr />
 </div>
 <% end %>
+<p><%= link_to "See More Art!", artworks_path %></p>
 </div>

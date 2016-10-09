@@ -1,8 +1,8 @@
 <div class='col-lg-12 center padding'>
   <% if @user == current_user %>
-  <p><h4 align="center"> Your gallery:</h4></p>
+  <p><h2 align="green-text center"> Your gallery:</h2></p>
 <% else %>
-  <p><h4 align="center"> <%= @user.name %>'s gallery:</h4></p>
+  <p><h2 align="green-text center"> <%= @user.name %>'s gallery:</h2></p>
 <% end %>
 </div>
 <div class='col-lg-12'>
@@ -20,7 +20,11 @@
 				    <%= image_tag like.user.profile.url, width: 20 %>
 			   	<% end %>
 		    </h6>
-        <%= link_to "Buy this piece!", artwork_path(artwork) %>
+        <% if @user == current_user %>
+          <% %>
+        <% else %>
+          <p><%= link_to "Buy this piece!", artwork_path(artwork) %></p>
+        <% end %>
       </div>
       </li>
     <% end %>
@@ -30,5 +34,10 @@
 <% end %>
 <br />
 </ul>
+  <div class="center">
+    <% if current_user.artist? && @user == current_user %> 
+      <%= link_to "Upload more of your artwork!", new_artwork_path %>
+    <% end %>
+  </div>
 <hr />
 </div>
