@@ -14,12 +14,12 @@
     <center>
     <% group.each do |like| %>
     <li>
-      <div class='col-md-4'>
+      <div class='col-md-4 padding'>
         <p>
           <%= link_to image_tag(like.artwork.image.url(:medium)), artwork_path(like.artwork) %>
           <h4><%= like.artwork.title %></h4>
           <h5><%= like.artwork.user.name %> | <%= like.artwork.user.city %></h5>
-          <h4><%= number_to_currency(like.artwork.price) %></h4>
+          <h4><%#= number_to_currency(like.artwork.price) %></h4>
         </p>
       </div>
       </li>
