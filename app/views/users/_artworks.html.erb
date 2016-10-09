@@ -6,6 +6,7 @@
 <% end %>
 </div>
 <div class='col-lg-12'>
+  <% if @user.artworks.size > 0 %>
 <ul>
 <% @user.artworks.in_groups_of(3, false).each do |group| %>
   <div class='row'>
@@ -33,10 +34,19 @@
   </div>
 <% end %>
 <br />
+<% else %>
+<div class= "row col-lg-12 center">
+  <% if @user == current_user %>
+    <p class= "lead">You haven't uploaded any artwork yet!</p>
+  <% else %>
+    <p class= "lead"><%= @user.name %> hasn't uploaded any artwork yet!</p>
+  <% end %>
+</div>
+<% end %>
 </ul>
   <div class="center">
     <% if current_user.artist? && @user == current_user %> 
-      <%= link_to "Upload more of your artwork!", new_artwork_path %>
+      <%= link_to "Upload your artwork!", new_artwork_path %>
     <% end %>
   </div>
 <hr />

@@ -1,5 +1,5 @@
 <% if @user == current_user %>
-	<p><h2 align="center"> Welcome to your profile page!</h2></p>
+	<p><h2 align="center"> Welcome to your profile page, <%= @user.name %>!</h2></p>
 <% else %>
 	<p><h2 align="center"> Welcome to <%= @user.name %>'s profile page!</h2></p>
 <% end %>
