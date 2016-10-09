@@ -25,12 +25,12 @@ var show_spinner = function(){
 	$('#spinner').show();
 }
 
-$('.js-create-tab').click(function() {
-	$('.js-join-content').hide()
-	$('.js-create-content').show()
-)}
+// $('.js-create-tab').click(function() {
+// 	$('.js-join-content').hide()
+// 	$('.js-create-content').show()
+// )}
 						  
-$('.js-join-tab').click(function() {
-	$('.js-create-content').hide()
-	$('.js-join-content').show()
-)}
+// $('.js-join-tab').click(function() {
+// 	$('.js-create-content').hide()
+// 	$('.js-join-content').show()
+// )}

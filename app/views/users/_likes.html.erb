@@ -13,8 +13,7 @@
     <% group.each do |like| %>
     <li>
       <div class='col-md-4'>
-        <%#= image_tag like.artwork.image.url(:medium) %>
-        <%= like.artwork_id %>
+        <%= image_tag like.artwork.image.url(:medium) %>
       </div>
       </li>
     <% end %>
