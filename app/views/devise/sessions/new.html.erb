@@ -7,7 +7,7 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class= "form-group padding">
           <div class="col-sm-6" align="center">
-            <%= f.text_field :name, class: "form-control", placeholder: "What's your name?", autofocus: true %>
+            <%= f.text_field :email, class: "form-control", placeholder: "Please enter your email", autofocus: true %>
           </div>
          
           <div class="col-sm-6">
@@ -28,7 +28,7 @@
 
           <div class="form-group">
             <div class="col-sm-12">
-              <%= f.submit "Sign Up", class: 'btn green-button btn-lg' %>
+              <%= f.submit "Log In", class: 'btn green-button btn-lg' %>
             </div>
           </div>
       <% end %>
