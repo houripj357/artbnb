@@ -1,8 +1,8 @@
-<div class='col-lg-12 center padding'>
+<div class='col-lg-12 center padding green-text'>
   <% if @user == current_user %>
-  <p><h2 align="green-text center"> Your gallery:</h2></p>
+  <p><h2 align="center"> Your gallery:</h2></p>
 <% else %>
-  <p><h2 align="green-text center"> <%= @user.name %>'s gallery:</h2></p>
+  <p><h2 align="center"> <%= @user.name %>'s gallery:</h2></p>
 <% end %>
 </div>
 <div class='col-lg-12'>
