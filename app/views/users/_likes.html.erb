@@ -10,14 +10,14 @@
   <div class='col-lg-12 center padding'>
 <% if @user.likes.size > 0 %>
 <ul>
-<% @user.likes.in_groups_of(3, false).each do |group| %>
+<% @user.likes.in_groups_of(6, false).each do |group| %>
   <div class='row col-lg-12'>
     <center>
     <% group.each do |like| %>
     <li>
-      <div class='col-md-4 padding'>
+      <div class='col-md-2 padding'>
         <p>
-          <%= link_to image_tag(like.artwork.image.url(:medium)), artwork_path(like.artwork) %>
+          <%= link_to image_tag(like.artwork.image.url(:medium), width: 100), artwork_path(like.artwork) %>
           <h4><%= like.artwork.title %></h4>
           <h5><%= like.artwork.user.name %> | <%= like.artwork.user.city %></h5>
           <h4><%#= number_to_currency(like.artwork.price) %></h4>
