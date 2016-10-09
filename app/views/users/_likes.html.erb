@@ -17,11 +17,12 @@
       <div class='col-md-4'>
         <p>
           <%= link_to image_tag(like.artwork.image.url(:medium)), artwork_path(like.artwork) %>
-          <h3><%= like.artwork.title %></h3>
-          <h4><%= like.artwork.user.name %> | <%= like.artwork.user.city %></h4>
-          <h3><%= number_to_currency(like.artwork.price) %></h3>
+          <h4><%= like.artwork.title %></h4>
+          <h5><%= like.artwork.user.name %> | <%= like.artwork.user.city %></h5>
+          <h4><%= number_to_currency(like.artwork.price) %></h4>
         </p>
       </div>
+      <br />
       </li>
     <% end %>
     <br />
