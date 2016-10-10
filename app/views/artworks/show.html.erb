@@ -1,19 +1,55 @@
-<p><h3> <%= @artwork.title %>, <%= link_to @artwork.user.name, user_path(@artwork.user) %> | Price: <%= number_to_currency(@artwork.price) %> </h3></p>
-<hr />
-<p> <%= image_tag @artwork.image.url(:large) %> </p>
-<p>Description: <%= @artwork.description %> </p>
-<p>
-  <% if @artwork.user.name? == current_user.name %> 
-    <%= link_to "Edit Artwork", edit_artwork_path(@artwork) %> | <%= link_to "See More Artwork", artworks_path %>
-    <hr />
-  <% else %>
-    <%= render 'payment' %>
-    <%= link_to "Message this artist!", new_conversation_path(@user) %> | <%= link_to "See More Artwork", artworks_path %>
-    <div id="artwork_<%= @artwork.id %>_likes">
-      <%= render partial: "likes", locals: {artwork: @artwork} %>
+<div class="container">
+
+  <div class="row">
+    <br />
+    <div class="col-lg-12">
+      <div class="col-lg-3 left">
+        <p>
+          <br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <h2 class="green-text"> 
+            <%= @artwork.title %>
+            <br />
+          </h2>
+          <h3>
+            Price: <%= number_to_currency(@artwork.price) %> 
+          </h3>
+        </p>
+        <p>Description: <%= @artwork.description %> </p>
+        <p>
+          <div id="artwork_<%= @artwork.id %>_likes">
+            <%= render partial: "likes", locals: {artwork: @artwork} %>
+          </div>
+        </p>
+      </div>
+      <div class="col-lg-6 center">
+        <p> <%= image_tag @artwork.image.url(:large), width: 600, height: 600 %> </p>
+      </div> 
+      <div class="col-lg-3 right">
+        <p> 
+          <br /><br /><br /><br /><br /><br />
+          <%= image_tag @artwork.user.profile.url(:thumb), class: "img-circle" %> 
+          <h2><%= link_to @artwork.user.name, user_path(@artwork.user) %></h2>
+          <h5><%= @artwork.user.role %></h5>
+          <h5><%= @artwork.user.city %>, <%= @artwork.user.country %></h5>
+          <% if @artwork.user.name? == current_user.name %>
+            <%= link_to "Edit Artwork", edit_artwork_path(@artwork) %>
+          <% else %>
+            <%= link_to "Message this artist!", new_conversation_path(@user) %>
+          <% end %>
+        </p>
+      </div>
     </div>
-    <hr />
-  <% end %>
-</p>
+
+    <div class="col-lg-12 center">
+      <%= render 'payment' %>
+      <hr />
+    </div>
 
 
+    <div class="col-lg-12 center">
+      <%= link_to "See More Artwork", artworks_path %>
+      <hr />
+    </div> 
+
+  </div>
+</div>
