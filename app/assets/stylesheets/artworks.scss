@@ -7,6 +7,22 @@
 	margin-bottom: 20px;
 }
 
+.bg-update-your-art {
+  background-image: url(image-path('bg-upload-your-art.jpg'));
+    background-size: cover;
+  padding: 20px;
+  margin-top: 20px;
+  height: 450px;
+  margin-bottom: 20px;
+}
+
+// .border {
+//   border:.5px solid black;
+//   border-opacity:0.7;
+//   background-color:rgba(230,146,248, 0.15);
+//   padding: 5px;
+// }
+
 .stripe-connect {
   display: inline-block;
   margin-bottom: 1px;

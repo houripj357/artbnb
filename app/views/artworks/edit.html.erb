@@ -1,5 +1,71 @@
-<h1>Edit the details of your artwork</h1>
+<div class="container">
 
-<p><%= render 'artworkform' %></p>
+  <div class="row" align="center">
+    <div class="bg-update-your-art col-lg-12 ">
 
-<p><%= link_to "delete", artwork_path(@artwork), method: :delete, data: {confirm: "Are you sure?"} %> | <%= link_to "Back", :back %></p>
+		<h1 class="green-text">Edit the details of your artwork</h1>
+
+		
+	<% if @artwork.errors.any? %>
+		<div class="row">
+		  	<div class="col-xs-8 col-xs-offset-2">
+		  		<div class="panel panel-danger">
+		  			<div class="panel-heading">
+		  				<h3 class="panel-title">
+		  					<%= pluralize(@artwork.errors.count, "error") %>
+		  					prohibited this artwork from being uploaded
+		  				</h3>
+		  				<div class="panel-body">
+		  					<ul>
+		  						<% @artwork.errors.full_messages.each do |msg| %>
+									<li><%= msg %></li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+
+	<%= form_for @artwork, html: { multipart: true } do |f| %>
+		<br />
+		<p class="white-text">
+			<%= f.file_field :image %>
+		</p>
+		<br />
+		<div class= "form-group padding">
+	        <div class="col-sm-6">
+	        	<%= f.text_field :title, class: "form-control", placeholder: "What's the title of your artwork?", autofocus: true %>
+	    </div>
+	        <div class="col-sm-6">
+	        	<%= f.text_field :price, class: "form-control", placeholder: "Please set a price" %>
+	        	<br />
+	    </div>
+	    </div>
+	    <div class= "form-group padding">
+	        <div class="col-sm-12">
+	        	<%= f.text_area :description, class: "form-control", placeholder: "Lastly, enter a description", rows: 5 %>
+	        	<br />
+	    </div>
+	    </div>
+		<div class="form-group">
+	            <div class="col-sm-12">
+	              <%= f.submit "Update your artwork!", class: 'btn green-button btn-lg' %>
+	            </div>
+	          </div>
+	<% end %>
+
+
+	</div>
+	    <div class="bg-green-banner padding col-lg-12">
+    	<h2>Don't want to show this piece on Artbnb anymore?</h2>
+    	<br />
+    	<h6>Click below to remove your artwork for the Artbnb gallery!</h6>
+    	<br />
+      	<p class="btn green-button btn-lg"><%= link_to "delete my art", artwork_path(@artwork), method: :delete, data: {confirm: "Are you sure?"} %></p>
+<br />
+<br />
+    </div>
+  </div>
+</div>
