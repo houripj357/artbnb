@@ -31,11 +31,7 @@
           <h2><%= link_to @artwork.user.name, user_path(@artwork.user) %></h2>
           <h5><%= @artwork.user.role %></h5>
           <h5><%= @artwork.user.city %>, <%= @artwork.user.country %></h5>
-          <% if @artwork.user.name? == current_user.name %>
-            <%= link_to "Edit Artwork", edit_artwork_path(@artwork) %>
-          <% else %>
-            <%= link_to "Message this artist!", new_conversation_path(@user) %>
-          <% end %>
+          <%= link_to "Message this artist!", new_conversation_path(@user) %>
         </p>
       </div>
     </div>
