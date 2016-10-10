@@ -20,7 +20,7 @@
           <h4><%= artwork.user.name %> | <%= artwork.user.city %></h4>
   		    <p>Likes: <%= artwork.likes.count %>
   				  <% artwork.likes.each do |like| %>
-  				    <%= image_tag like.user.profile.url, width: 20 %>
+  				    <%= image_tag like.user.profile.url, width: 20, height: 20 %>
   			   <% end %>
   		    </p>
           <h3><%= number_to_currency(artwork.price) %></h3>

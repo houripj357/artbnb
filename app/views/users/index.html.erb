@@ -30,5 +30,81 @@
 </p>
 <hr />
 </div>
-  <%= render 'search' %>
+<div class="row">
+  <div class="col-md-12">
+  <div id="friend-lookup">
+  <h3 class="center">Find An Artist Near You</h3>
+    <%= form_tag search_friends_path, remote: true, method: :get, id: 'friend-lookup-form' do %>
+      <div class="form-group row no-padding text-center col-md-12">
+        <div class="col-md-1">
+          <%   %>
+        </div>
+        <div class="col-md-8">
+          <%= text_field_tag :search_param,
+            params[:search_param],
+            placeholder: 'City or Country',
+            class: 'form-control search-box input-lg' %>
+        </div>
+        <div class="col-md-2">
+          <%= button_tag(type: :submit, class: 'btn btn-lg btn-success') do %>
+            <i class='fa fa-search'></i> Search Artists
+          <% end %>
+        </div>
+        <div class="col-md-1">
+          <%   %>
+        </div>
+      </div>
+  <% end %>
+<%= render 'shared/spinner' %>
+  <% if @users %>
+  <% if @users.size > 0 %>
+  <div class="row">
+  <div class="col-md-12">
+    <div class="col-md-12 center">
+      <h3>Search Results</h3>
+    </div>
+    <div class="col-md-1">
+    </div>
+      <div id="friend-lookup-results" class="well results-block col-md-10">
+        <table class="search-results-table col-md-12">
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= image_tag user.profile.url(:thumb), width: 60 %></td>
+                <td><strong>Name:</strong> <%= user.name %></td>
+                <td><strong>Location:</strong> <%= user.city %>, <%= user.country %></td>
+                <td><strong>Role:</strong> <%= user.role %></td>
+                <td>
+                  <%= link_to "View Profile", user_path(user), class: "btn btn-xs green-button" %>
+                </td>
+                <td>
+                  <% if current_user.not_friends_with?(user.id) %>
+                  <%= link_to "Add as friend", add_friend_path(user: current_user, friend: user),
+                    class: 'btn btn-xs green-button', method: :post %>
+                  <% else %>
+                    <span class='label label-primary'>
+                      You are friends
+                    </span>
+                  <% end %>
+                </td>
+                <td><%= link_to "Send Message", new_conversation_path(user), class: "btn btn-xs green-button" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-1">
+      </div>
+                  <% else %>
+                    <p class="lead col-md-12">
+                      No people match this search criteria
+                    </p>
+                <% end %>
+          <% end %>
+  </div>
+  </div>
+<div id="friend-lookup-errors"></div>
+</div>
+</div>
+</div>
 <hr />

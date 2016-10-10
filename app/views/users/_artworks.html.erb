@@ -24,7 +24,7 @@
         <% if @user == current_user %>
           <% %>
         <% else %>
-          <p><%= link_to "Buy this piece!", artwork_path(artwork) %></p>
+          <p class="btn green-button btn-lg"><%= link_to "Buy this piece!", artwork_path(artwork) %></p>
         <% end %>
       </div>
       </li>
