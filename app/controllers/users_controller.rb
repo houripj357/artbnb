@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!, :index, :show
+	before_action :authenticate_user!, :index
 	after_action :verify_authorized
 
 	def show 
