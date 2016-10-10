@@ -50,7 +50,7 @@ class User < ApplicationRecord
     end
 
     def self.search(param)
-    	return User.non if param.blank?
+    	return User.none if param.blank?
 
     	param.strip!
     	(name_matches(param) + email_matches(param)).uniq
