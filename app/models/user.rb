@@ -52,8 +52,8 @@ class User < ApplicationRecord
     def self.search(param)
     	return User.none if param.blank?
 
-    	param.strip!
-    	(name_matches(param) + email_matches(param)).uniq
+    	# param.strip!
+    	(city_matches(param) + country_matches(param)).uniq
     end
 
     def self.name_matches(param)
@@ -64,11 +64,11 @@ class User < ApplicationRecord
     	matches('email', param)
     end
 
-    def self.name_matches(param)
+    def self.city_matches(param)
         matches('city', param)
     end
 
-    def self.name_matches(param)
+    def self.country_matches(param)
         matches('country', param)
     end
 

@@ -3,25 +3,25 @@
 	<div id="friend-lookup">
 	<h3 class="center">Find An Artist Near You</h3>
 		<%= form_tag search_friends_path, remote: true, method: :get, id: 'friend-lookup-form' do %>
-			<div class="form-group row no-padding text-center col-md-12">
-				<div class="col-md-1">
-					<%   %>
-				</div>
-				<div class="col-md-8">
-					<%= text_field_tag :search_param,
-						params[:search_param],
-						placeholder: 'City or Country',
-						class: 'form-control search-box input-lg' %>
-				</div>
-				<div class="col-md-2">
-					<%= button_tag(type: :submit, class: 'btn btn-lg btn-success') do %>
-						<i class='fa fa-search'></i> Search Artists
-					<% end %>
-				</div>
-				<div class="col-md-1">
-					<%   %>
-				</div>
-			</div>
+			      <div class="form-group row no-padding text-center col-md-12">
+        <div class="col-md-1">
+          <%   %>
+        </div>
+        <div class="col-md-8">
+          <%= text_field_tag :search_param,
+            params[:search_param],
+            placeholder: 'City or Country',
+            class: 'form-control search-box input-lg' %>
+        </div>
+        <div class="col-md-2">
+          <%= button_tag(type: :submit, class: 'btn btn-lg btn-success') do %>
+            <i class='fa fa-search'></i> Search Artists
+          <% end %>
+        </div>
+        <div class="col-md-1">
+          <%   %>
+        </div>
+      </div>
 	<% end %>
 <%= render 'shared/spinner' %>
 	<% if @users %>
